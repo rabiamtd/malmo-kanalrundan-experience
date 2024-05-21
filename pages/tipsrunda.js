@@ -1,7 +1,5 @@
 "use strict";
 
-localStorage.clear();
-
 
 function createTipsrundaPage(narrativeData, siteId) {
 
@@ -59,11 +57,10 @@ function createTipsrundaPage(narrativeData, siteId) {
 
     // Update the button text based on whether it's the last question
     const saveBtn = document.getElementById('saveBtn');
-    const remainingQuestions = totalQuestions - answeredQuestions.length;
+    //const remainingQuestions = totalQuestions - answeredQuestions.length;
+    //  if (remainingQuestions === 0) { // maybe 1, if not saved yet?
 
-    console.log(totalQuestions);
-
-    if (remainingQuestions === 0) {
+    if (answeredQuestions.length === 1) {
         saveBtn.textContent = "Save and exit tipsrunda";
     } else {
         saveBtn.textContent = "Save and return to map";
@@ -81,7 +78,8 @@ function createTipsrundaPage(narrativeData, siteId) {
             updateProgressBar(answeredQuestions.length, totalQuestions);
         }
 
-        if (remainingQuestions === 0) {
+        // if (remainingQuestions === 0) {
+        if (answeredQuestions.length === 2) {
             createSummaryPage();
         } else {
             createUpdatedMapPage();

@@ -5,18 +5,17 @@
 const savedSites = JSON.parse(localStorage.getItem('sites'));
 const answeredQuestions = JSON.parse(localStorage.getItem('answeredQuestions')) || [];
 
-localStorage.clear();
+console.log(savedSites);
+console.log(answeredQuestions);
 
 // If saved data exists, create the map page
-if (savedSites) {
+if (answeredQuestions) {
     createMapPage();
 } else {
     // Save the initial site data to localStorage
     saveSitesToLocalStorage();
     createLoadingScreenPage();
 }
-
-console.log(savedSites);
 
 // Function to save site data to localStorage
 function saveSitesToLocalStorage() {
