@@ -27,6 +27,10 @@
     cursor: pointer;
 }
 
+.site-info-container {
+    display: flex;
+}
+
 .status-icon {
     color: #023047;
 }

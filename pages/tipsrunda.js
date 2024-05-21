@@ -2,17 +2,15 @@
 
 
 function createTipsrundaPage(narrativeData, siteId) {
-
     const main = document.querySelector('main');
     main.innerHTML = `
-    <div class="narrativePageContainer">
-        <div id="tipsrunda-progress-bar-container">
-            <div id="tipsrunda-progress-bar"></div>
-        </div>
+    <div class="tipsrundaPageContainer">
+    <h1>Malmö Kanalrundan</h1>
+    <p>Frågor</p>
+    <p>${answeredQuestions.length}/${totalQuestions}</p>
         <div class="tipsrundaContainer"> 
-            <div id="hero-container">
-                <img class="img" src="${narrativeData.img}" width="100%" height="30%">
-                <p></p>
+            <div id="tipsrunda-progress-bar-container">
+                <div id="tipsrunda-progress-bar"></div>
             </div>
             <div id="tipsrunda-questions-container"></div>
             <button class="mainBtn" id="saveBtn" disabled></button>
@@ -110,9 +108,6 @@ function createTipsrundaPage(narrativeData, siteId) {
             <div id="map"></div>   
         </div>
         `;
-
-        createMap('map', sites);
-        launchQModal();
     }
 
 

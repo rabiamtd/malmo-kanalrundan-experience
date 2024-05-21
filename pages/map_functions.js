@@ -63,7 +63,12 @@ function createMap(mapContainerId, sites) {
             // Clear any existing content
             modalQuestion.innerHTML = '';
 
-            modalQuestion.textContent = `Fråga ${site.id}`;
+            modalQuestion.innerHTML = `
+            <div class="site-info-container">
+                <h3>Fråga ${site.id}</h3>
+                <p>${site.name}</p>
+            </div>
+            `;
             modalQuestion.classList.add("modal-question-container");
 
             if (!answeredQuestions.includes(site.id) && site.id === answeredQuestions.length + 1) {
