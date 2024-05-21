@@ -4,17 +4,20 @@ function createSummaryPage() {
     main.innerHTML = `
         <div class="summaryPageContainer">
             <h1>Results Summary</h1>
-            <div class="summary-container">
-                ${siteNarrativesAndQuestions.map((site, index) => `
-                    <div class="site-summary">
-                        <h2>Site ${site.id}</h2>
-                        <div class="question-summary">
-                            <p><strong>Question:</strong> ${site.tipsrundaQuestion.question}</p>
-                            <p><strong>Selected Answer:</strong> ${site.tipsrundaQuestion.options[0]}</p> <!-- Assuming correct answer is always the first option -->
-                        </div>
-                    </div>
-                `).join('')}
-            </div>
+            <p>Grattis {användarnamn}! Du har framgångsrikt synkroniserat med Malmös kanalhistoria. Din resa genom kanalens tidslinje har avslöjat följande insikter...
+            <div class="summary-container"></div>
         </div>
     `;
+    console.log(totalQuestions);
+
+
+    /*function displayQuizResult(questionsAnswered, totalQuestions) {
+    const progressBar = document.getElementById("tipsrunda-progress-bar");
+    const progressPercentage = (questionsAnswered / totalQuestions) * 100;
+    progressBar.style.width = `${progressPercentage}%`;
+    }
+    
+    displayQuizResult(answeredQuestions.length, totalQuestions);*/
+
+
 }

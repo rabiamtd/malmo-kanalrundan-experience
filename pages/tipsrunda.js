@@ -5,7 +5,7 @@ function createTipsrundaPage(narrativeData, siteId) {
     const main = document.querySelector('main');
     main.innerHTML = `
     <div class="tipsrundaPageContainer">
-    <h1>Malmö Kanalrundan</h1>
+    <h1>Memory Calibration and Synchronization Protocol MCSP</h1>
     <p>Frågor</p>
     <p>${answeredQuestions.length}/${totalQuestions}</p>
         <div class="tipsrundaContainer"> 

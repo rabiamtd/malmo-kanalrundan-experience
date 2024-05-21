@@ -1,6 +1,7 @@
 "use strict";
 
-localStorage.clear();
+//localStorage.clear();
+
 // Check localStorage for saved data on narrative shown and answered questions
 const savedSites = JSON.parse(localStorage.getItem('sites'));
 const answeredQuestions = JSON.parse(localStorage.getItem('answeredQuestions')) || [];
