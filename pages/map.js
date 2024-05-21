@@ -2,6 +2,7 @@
 
 /* map.js: */
 
+
 // initialize variables to keep track of questions
 let totalQuestions = siteNarrativesAndQuestions.length;
 
