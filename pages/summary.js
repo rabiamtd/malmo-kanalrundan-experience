@@ -1,9 +1,8 @@
 "use strict";
 // Create summary page
 function createSummaryPage() {
-    const main = document.querySelector('main');
     main.innerHTML = `
-        <div class="summary-page">
+        <div class="summaryPageContainer">
             <h1>Results Summary</h1>
             <div class="summary-container">
                 ${siteNarrativesAndQuestions.map((site, index) => `

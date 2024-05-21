@@ -108,6 +108,8 @@ function createTipsrundaPage(narrativeData, siteId) {
             <div id="map"></div>   
         </div>
         `;
+
+        createMap("map", sites);
     }
 
 
