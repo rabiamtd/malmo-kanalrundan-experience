@@ -1,0 +1,14 @@
+#tipsrunda-questions-container {
+    height: auto;
+}
+
+#tipsrunda-progress-bar {
+    height: 10px;
+    background-color: pink;
+}
+
+.option-button.selected {
+    background-color: #000000;
+    border-color: #badbcc;
+    color: white;
+}

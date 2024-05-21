@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+}
+
+main {
+    height: 100vh;
+    width: 100vw;
+}
+
+.round {
+    border-radius: 50%;
+}
+
+.mainBtn,
+button {
+    border: none;
+    cursor: pointer;
+    font: inherit;
+}

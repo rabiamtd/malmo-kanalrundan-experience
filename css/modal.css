@@ -1,0 +1,79 @@
+.modal-container {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 2;
+  display: none;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-container.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+
+  animation: fadeIn 0.3s;
+}
+
+.modal-container.active .modal-contentBox {
+  width: 92vw;
+  height: 90vh;
+
+  background-color: rgba(255, 255, 255, 0.878);
+  border-radius: 0.5rem;
+
+  position: relative;
+}
+
+.modal-contentBox {
+  display: flex;
+  flex-direction: column;
+}
+
+#close-button {
+  position: absolute;
+  top: 0.8rem;
+  right: 1rem;
+
+  width: 1.5rem;
+  height: 1.5rem;
+
+  border-radius: 50%;
+  background-color: rgb(0, 0, 0);
+  color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.modal-button {
+  align-items: center;
+  padding: 12px 28px;
+  border-radius: 6px;
+  color: #000000;
+  background: #ffffffb3;
+  border: none;
+  box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+#saveClose-button {
+  background-color: peachpuff;
+  padding: 12px 28px;
+  border-radius: 10px;
+}

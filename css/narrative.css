@@ -1,0 +1,8 @@
+.narrativePageContainer {
+    height: 100%;
+    width: 100%;
+    background-color: #023047;
+    color: white;
+    outline-color: yellow;
+    margin: auto;
+}
