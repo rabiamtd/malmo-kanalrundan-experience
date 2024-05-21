@@ -27,6 +27,4 @@ function createMapPage() {
     `;
 
     createMap('map', sites);
-    launchQModal();
-
 }

@@ -4,12 +4,15 @@ let userLocation = null;
 
 function createMap(mapContainerId, sites) {
 
+
     var map = L.map(mapContainerId).setView([55.60544094541752, 12.998602498847754], 14);
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
+
+    launchQModal();
 
     if (userLocation) {
         onLocationFound({ latlng: userLocation });
