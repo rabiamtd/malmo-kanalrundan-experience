@@ -30,8 +30,11 @@ function createMap(mapContainerId, sites) {
         localStorage.setItem('userLocation', JSON.stringify(userLocation)); // Store location in localStorage
 
         var userLatLng = e.latlng;
+        var marker = L.marker([51.5, -0.09]).addTo(map);
+
         // Call the function to create questions in modal with user's location
         createQuestionsInModal(userLatLng);
+        console.log(userLatLng);
     }
 
     function onLocationError(e) {

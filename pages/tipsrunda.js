@@ -1,5 +1,6 @@
 "use strict";
 
+let userSelections = []; // Array to store the user's selections and results
 
 function createTipsrundaPage(narrativeData, siteId) {
     const main = document.querySelector('main');
@@ -24,6 +25,7 @@ function createTipsrundaPage(narrativeData, siteId) {
         const tipsrundaContainer = document.getElementById("tipsrunda-questions-container");
 
         if (narrativeData) {
+            const correctAnswer = narrativeData.options[0]; // Store the correct answer before shuffling
             const shuffledOptions = shuffleArray([...narrativeData.options]);
 
             tipsrundaContainer.innerHTML = `
@@ -34,7 +36,7 @@ function createTipsrundaPage(narrativeData, siteId) {
                 const optionElement = document.createElement('button');
                 optionElement.className = 'option-button';
                 optionElement.innerText = option;
-                optionElement.addEventListener('click', () => handleOptionClick(optionElement));
+                optionElement.addEventListener('click', () => handleOptionClick(optionElement, correctAnswer));
                 tipsrundaContainer.appendChild(optionElement);
             });
         } else {
@@ -42,7 +44,7 @@ function createTipsrundaPage(narrativeData, siteId) {
             return null;
         }
 
-        function handleOptionClick(selectedElement) {
+        function handleOptionClick(selectedElement, correctAnswer) {
             const options = document.querySelectorAll('.option-button');
             options.forEach(option => {
                 option.classList.remove('selected');
@@ -50,14 +52,25 @@ function createTipsrundaPage(narrativeData, siteId) {
 
             selectedElement.classList.add('selected');
             document.getElementById('saveBtn').disabled = false;
+
+            // Store the selection result
+            const existingSelectionIndex = userSelections.findIndex(selection => selection.siteId === siteId);
+            const selectionData = {
+                siteId: siteId,
+                selectedAnswer: selectedElement.innerText,
+                isCorrect: selectedElement.innerText === correctAnswer
+            };
+
+            if (existingSelectionIndex >= 0) {
+                userSelections[existingSelectionIndex] = selectionData;
+            } else {
+                userSelections.push(selectionData);
+            }
         }
     }
 
     // Update the button text based on whether it's the last question
     const saveBtn = document.getElementById('saveBtn');
-    //const remainingQuestions = totalQuestions - answeredQuestions.length;
-    //  if (remainingQuestions === 0) { // maybe 1, if not saved yet?
-
     if (answeredQuestions.length === 1) {
         saveBtn.textContent = "Save and exit tipsrunda";
     } else {
@@ -76,20 +89,23 @@ function createTipsrundaPage(narrativeData, siteId) {
             updateProgressBar(answeredQuestions.length, totalQuestions);
         }
 
-        // if (remainingQuestions === 0) {
+        /*if (answeredQuestions.length === totalQuestions) {
+            createSummaryPage();
+        } else {
+            createUpdatedMapPage();
+        }*/
+
         if (answeredQuestions.length === 2) {
             createSummaryPage();
         } else {
             createUpdatedMapPage();
         }
 
-        // Disable the save button after saving
         saveBtn.disabled = true;
-
     }
 
-
     function createUpdatedMapPage() {
+        const main = document.querySelector('main');
         main.innerHTML = `
         <div id="mapPageContainer">
             <div class="modal-container">
@@ -111,7 +127,6 @@ function createTipsrundaPage(narrativeData, siteId) {
 
         createMap("map", sites);
     }
-
 
     function updateProgressBar(questionsAnswered, totalQuestions) {
         const progressBar = document.getElementById("tipsrunda-progress-bar");
