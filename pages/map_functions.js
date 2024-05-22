@@ -1,10 +1,8 @@
 "use strict";
 
-let userLocation = null;
+let userMarker = null; // Variable to store the user marker
 
 function createMap(mapContainerId, sites) {
-
-
     var map = L.map(mapContainerId).setView([55.60544094541752, 12.998602498847754], 14);
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -12,25 +10,34 @@ function createMap(mapContainerId, sites) {
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
 
+    // Add the button to update location
+    const updateLocationButton = L.control({ position: 'bottomright' });
+    updateLocationButton.onAdd = function () {
+        const div = L.DomUtil.create('div', 'update-location-button');
+        div.innerHTML = '<button>Update Location</button>';
+        div.firstChild.addEventListener('click', updateLocation);
+        return div;
+    };
+    updateLocationButton.addTo(map);
+
     launchQModal();
 
-    if (userLocation) {
-        onLocationFound({ latlng: userLocation });
-    } else {
-        map.locate({
-            setView: false,
-            maxZoom: 16,
-            timeout: 10000,
-            enableHighAccuracy: true
-        });
-    }
+    // Always use live location
+    map.locate({
+        setView: false,
+        maxZoom: 16,
+        timeout: 10000,
+        enableHighAccuracy: true
+    });
 
     function onLocationFound(e) {
-        userLocation = e.latlng;
-        localStorage.setItem('userLocation', JSON.stringify(userLocation)); // Store location in localStorage
+        const userLatLng = e.latlng;
 
-        var userLatLng = e.latlng;
-        var marker = L.marker([51.5, -0.09]).addTo(map);
+        if (userMarker) {
+            map.removeLayer(userMarker);
+        }
+
+        userMarker = L.marker([userLatLng.lat, userLatLng.lng]).addTo(map);
 
         // Call the function to create questions in modal with user's location
         createQuestionsInModal(userLatLng);
@@ -58,6 +65,15 @@ function createMap(mapContainerId, sites) {
         var distance = userLatLng.distanceTo(siteLatLng);
         var thresholdDistance = 50;
         return distance < thresholdDistance;
+    }
+
+    function updateLocation() {
+        map.locate({
+            setView: false,
+            maxZoom: 16,
+            timeout: 10000,
+            enableHighAccuracy: true
+        });
     }
 
     function createQuestionsInModal(userLatLng) {
@@ -169,5 +185,3 @@ function createMap(mapContainerId, sites) {
         statusBox.style.top = `${parentRect.bottom}px`;
     }
 }
-
-
