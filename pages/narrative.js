@@ -2,7 +2,10 @@
 
 /* narrative.js: */
 
-function createNarrativePage(site) {
+function createNarrativePage(site, userLatLng) {
+
+    console.log('Creating narrative page for site:', site, 'at location:', userLatLng);
+
     main.innerHTML = `
     <div class="narrativePageContainer">
         <div class="dialogue-container">

@@ -1,6 +1,6 @@
 "use strict";
 
-let userMarker = null; // Variable to store the user marker
+let userMarker = null;
 
 function createMap(mapContainerId, sites) {
     var map = L.map(mapContainerId).setView([55.60544094541752, 12.998602498847754], 14);
@@ -10,7 +10,6 @@ function createMap(mapContainerId, sites) {
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
 
-    // Add the button to update location
     const updateLocationButton = L.control({ position: 'bottomright' });
     updateLocationButton.onAdd = function () {
         const div = L.DomUtil.create('div', 'update-location-button');
@@ -22,7 +21,6 @@ function createMap(mapContainerId, sites) {
 
     launchQModal();
 
-    // Always use live location
     map.locate({
         setView: false,
         maxZoom: 16,
@@ -38,8 +36,6 @@ function createMap(mapContainerId, sites) {
         }
 
         userMarker = L.marker([userLatLng.lat, userLatLng.lng]).addTo(map);
-
-        // Call the function to create questions in modal with user's location
         createQuestionsInModal(userLatLng);
         console.log(userLatLng);
     }
@@ -77,12 +73,10 @@ function createMap(mapContainerId, sites) {
     }
 
     function createQuestionsInModal(userLatLng) {
-        document.getElementById("questionProgressContainer").innerHTML = ''; // Clear existing questions
+        document.getElementById("questionProgressContainer").innerHTML = '';
 
         sites.forEach(site => {
             let modalQuestion = document.createElement("div");
-
-            // Clear any existing content
             modalQuestion.innerHTML = '';
 
             modalQuestion.innerHTML = `
@@ -100,14 +94,16 @@ function createMap(mapContainerId, sites) {
                     modalQuestion.appendChild(playIcon);
 
                     modalQuestion.addEventListener("click", function () {
-                        createNarrativePage(site, userLatLng);
+                        if (typeof createNarrativePage === 'function') {
+                            createNarrativePage(site, userLatLng);
+                        } else {
+                            console.warn('createNarrativePage function is not defined');
+                        }
                     });
                 } else {
                     let lockIcon = document.createElement("i");
                     lockIcon.classList.add("fa-solid", "fa-lock", "status-icon");
                     modalQuestion.appendChild(lockIcon);
-
-                    // Add event listener to display status box when locked question is clicked
                     modalQuestion.addEventListener("click", function () {
                         displayStatusBox("Frågan är fortfarande låst. Närma dig platsen för att låsa upp den.", modalQuestion);
                     });
@@ -120,8 +116,6 @@ function createMap(mapContainerId, sites) {
                 let lockIcon = document.createElement("i");
                 lockIcon.classList.add("fa-solid", "fa-lock", "status-icon");
                 modalQuestion.appendChild(lockIcon);
-
-                // Add event listener to display status box when locked question is clicked
                 modalQuestion.addEventListener("click", function () {
                     displayStatusBox("Frågan är fortfarande låst. Svara på de tidigare frågorna för låsa upp den.", modalQuestion);
                 });
@@ -130,58 +124,9 @@ function createMap(mapContainerId, sites) {
             document.getElementById("questionProgressContainer").append(modalQuestion);
         });
     }
+}
 
-    function displayStatusBox(message, parentElement) {
-        // Remove any existing status box
-        const existingStatusBox = document.querySelector(".status-box");
-        if (existingStatusBox) {
-            existingStatusBox.remove();
-        }
-
-        // Create status box container
-        const statusBox = document.createElement("div");
-        statusBox.classList.add("status-box");
-        statusBox.textContent = message;
-
-        // Create close button
-        const closeButton = document.createElement("button");
-        closeButton.textContent = "Stäng";
-        closeButton.addEventListener("click", () => {
-            statusBox.remove();
-        });
-
-        statusBox.appendChild(closeButton);
-
-        // Append status box after the parent element
-        parentElement.parentNode.insertBefore(statusBox, parentElement.nextSibling);
-
-        // Add styles for the status box to appear below the question and add an arrow
-        statusBox.style.position = "absolute";
-        statusBox.style.zIndex = "1000";
-        statusBox.style.marginTop = "10px";
-        statusBox.style.padding = "10px";
-        statusBox.style.border = "1px solid #ccc";
-        statusBox.style.borderRadius = "5px";
-        statusBox.style.backgroundColor = "#fff";
-        statusBox.style.boxShadow = "0 0 10px rgba(0,0,0,0.1)";
-
-        const arrow = document.createElement("div");
-        arrow.classList.add("status-box-arrow");
-        arrow.style.position = "absolute";
-        arrow.style.top = "-10px";
-        arrow.style.left = "50%";
-        arrow.style.transform = "translateX(-50%)";
-        arrow.style.width = "0";
-        arrow.style.height = "0";
-        arrow.style.borderLeft = "10px solid transparent";
-        arrow.style.borderRight = "10px solid transparent";
-        arrow.style.borderBottom = "10px solid #fff";
-
-        statusBox.appendChild(arrow);
-
-        // Position the status box right below the parent element
-        const parentRect = parentElement.getBoundingClientRect();
-        statusBox.style.left = `${parentRect.left}px`;
-        statusBox.style.top = `${parentRect.bottom}px`;
-    }
+// Placeholder function, to be defined in narrative.js
+function createNarrativePage(site, userLatLng) {
+    console.warn('createNarrativePage function is not defined');
 }
