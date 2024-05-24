@@ -1,9 +1,11 @@
 function createSummaryPage() {
+    // Retrieve username from local storage
+    const username = localStorage.getItem("username");
     const main = document.querySelector('main');
     main.innerHTML = `
         <div class="summaryPageContainer">
             <h1>Results Summary</h1>
-            <p>Grattis {användarnamn}! Du har framgångsrikt synkroniserat med Malmös kanalhistoria. Din resa genom kanalens tidslinje har avslöjat följande insikter...</p>
+            <p>Astrid: Grattis ${username}! Du har framgångsrikt synkroniserat med Malmös kanalhistoria. Din resa genom kanalens tidslinje har avslöjat följande insikter...</p>
             <div class="summary-container"></div>
         </div>
     `;
