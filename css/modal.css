@@ -1,13 +1,16 @@
+/* Modal Container */
 .modal-container {
+  font-family: Orbitron-Regular;
   position: absolute;
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.9);
+  /* Dark background */
   z-index: 2;
   display: none;
 }
 
-
+/* Fade In Animation */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -18,62 +21,74 @@
   }
 }
 
+/* Active Modal Container */
 .modal-container.active {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100vw;
   height: 100vh;
-
   animation: fadeIn 0.3s;
 }
 
+/* Modal Content Box */
 .modal-container.active .modal-contentBox {
   width: 92vw;
   height: 90vh;
-
-  background-color: rgba(255, 255, 255, 0.878);
+  background-color: #121212;
+  /* Dark background */
   border-radius: 0.5rem;
-
   position: relative;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  /* Soft shadow for depth */
 }
 
+/* Modal Content Box */
 .modal-contentBox {
   display: flex;
   flex-direction: column;
 }
 
+/* Close Button */
 #close-button {
   position: absolute;
   top: 0.8rem;
   right: 1rem;
-
   width: 1.5rem;
   height: 1.5rem;
-
   border-radius: 50%;
-  background-color: rgb(0, 0, 0);
-  color: white;
-
+  background-color: #333;
+  /* Dark gray background */
+  color: #fff;
+  /* White color */
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+  /* Soft shadow for visibility */
 }
 
+/* Modal Button */
 .modal-button {
   align-items: center;
   padding: 12px 28px;
   border-radius: 6px;
-  color: #000000;
-  background: #ffffffb3;
+  color: #fff;
+  /* White color */
+  background: #0277bd;
+  /* Deep blue background */
   border: none;
-  box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.5px 1px rgba(0, 0, 0, 0.1);
   cursor: pointer;
 }
 
+/* Save and Close Button */
 #saveClose-button {
-  background-color: peachpuff;
+  background-color: #f57c00;
+  /* Orange color */
+  color: #fff;
+  /* White color */
   padding: 12px 28px;
   border-radius: 10px;
 }

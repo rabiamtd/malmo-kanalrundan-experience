@@ -1,0 +1,18 @@
+/* Colors */
+:root {
+    --blue-light: #8ecae6;
+    --blue-dark: #023047;
+    --yellow-light: #FFB703;
+    --yellow-dark: #FB8500;
+    --accent: #219EBC;
+
+    --black: #000000;
+    --white: #ffffff;
+}
+
+/* Fonts */
+
+@font-face {
+    font-family: Orbitron-Regular;
+    src: url("../fonts/Orbitron/static/Orbitron-Regular.ttf");
+}

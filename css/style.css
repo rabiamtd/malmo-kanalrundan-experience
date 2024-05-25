@@ -23,3 +23,7 @@ button {
     cursor: pointer;
     font: inherit;
 }
+
+body {
+    font-family: Orbitron-Regular;
+}
