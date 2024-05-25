@@ -35,10 +35,23 @@ function createMap(mapContainerId, sites) {
             map.removeLayer(userMarker);
         }
 
-        userMarker = L.marker([userLatLng.lat, userLatLng.lng]).addTo(map);
+        // Calculate initial position for the animation (top of the page)
+        const initialPosition = map.containerPointToLatLng([0, 0]);
+
+        // Create the userMarker at the initial position
+        userMarker = L.marker(initialPosition).addTo(map);
+
+        // Create a new PosAnimation object
+        var animation = new L.PosAnimation();
+
+        // Start the animation to the user's location
+        animation.run(userMarker._icon, map.latLngToLayerPoint(userLatLng), 1);
+
         createQuestionsInModal(userLatLng);
         console.log(userLatLng);
     }
+
+
 
     function onLocationError(e) {
         alert(e.message);
@@ -70,7 +83,23 @@ function createMap(mapContainerId, sites) {
             timeout: 10000,
             enableHighAccuracy: true
         });
+
+        // Check if userMarker exists
+        if (userMarker) {
+            // Get current position of userMarker
+            var currentPosition = userMarker.getLatLng();
+
+            // Calculate new position for the animation (drop down from the top)
+            var newPosition = map.containerPointToLatLng([0, 0]);
+
+            // Create a new PosAnimation object
+            var animation = new L.PosAnimation();
+
+            // Start the animation to the new position
+            animation.run(userMarker._icon, map.latLngToLayerPoint(newPosition), 1);
+        }
     }
+
 
     function createQuestionsInModal(userLatLng) {
         document.getElementById("questionProgressContainer").innerHTML = '';

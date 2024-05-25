@@ -89,17 +89,17 @@ function createTipsrundaPage(narrativeData, siteId) {
             updateProgressBar(answeredQuestions.length, totalQuestions);
         }
 
-        /*if (answeredQuestions.length === totalQuestions) {
+        if (answeredQuestions.length === totalQuestions) {
             createSummaryPage();
         } else {
             createUpdatedMapPage();
-        }*/
-
-        if (answeredQuestions.length === 2) {
-            createSummaryPage();
-        } else {
-            createUpdatedMapPage(sites);
         }
+
+        /* if (answeredQuestions.length === 2) {
+             createSummaryPage();
+         } else {
+             createUpdatedMapPage(sites);
+         }*/
 
         saveBtn.disabled = true;
     }
