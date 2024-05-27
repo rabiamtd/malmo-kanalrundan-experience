@@ -1,6 +1,7 @@
 "use strict";
 
 let userMarker = null;
+let userLatLng = null;
 
 function createMap(mapContainerId, sites) {
     var map = L.map(mapContainerId).setView([55.60544094541752, 12.998602498847754], 14);
@@ -29,29 +30,21 @@ function createMap(mapContainerId, sites) {
     });
 
     function onLocationFound(e) {
-        const userLatLng = e.latlng;
+        userLatLng = e.latlng;
 
         if (userMarker) {
             map.removeLayer(userMarker);
         }
 
-        // Calculate initial position for the animation (top of the page)
-        const initialPosition = map.containerPointToLatLng([0, 0]);
+        // Create the userMarker at the user's location
+        userMarker = L.marker(userLatLng).addTo(map);
 
-        // Create the userMarker at the initial position
-        userMarker = L.marker(initialPosition).addTo(map);
-
-        // Create a new PosAnimation object
-        var animation = new L.PosAnimation();
-
-        // Start the animation to the user's location
-        animation.run(userMarker._icon, map.latLngToLayerPoint(userLatLng), 0.5);
+        // Ensure the marker is added to the map correctly
+        userMarker.setLatLng(userLatLng);
 
         createQuestionsInModal(userLatLng);
         console.log(userLatLng);
     }
-
-
 
     function onLocationError(e) {
         alert(e.message);
@@ -70,9 +63,9 @@ function createMap(mapContainerId, sites) {
     });
 
     function isUserNearSite(site, userLatLng) {
-        var siteLatLng = L.latLng(site.lat, site.lng);
+        var siteLatLng = L.latLng(site.lat, site.lng);  // Correct function name is L.latLng
         var distance = userLatLng.distanceTo(siteLatLng);
-        var thresholdDistance = 80;
+        var thresholdDistance = site.radius; // Ensure correct radius check
         return distance < thresholdDistance;
     }
 
@@ -89,17 +82,15 @@ function createMap(mapContainerId, sites) {
             // Get current position of userMarker
             var currentPosition = userMarker.getLatLng();
 
-            // Calculate new position for the animation (drop down from the top)
-            var newPosition = map.containerPointToLatLng([0, 0]);
+            // Update the marker position to the user's current location
+            userMarker.setLatLng(currentPosition);
 
-            // Create a new PosAnimation object
-            var animation = new L.PosAnimation();
-
-            // Start the animation to the new position
-            animation.run(userMarker._icon, map.latLngToLayerPoint(newPosition), 0.5);
+            // Update modal questions
+            if (userLatLng) {
+                createQuestionsInModal(userLatLng);
+            }
         }
     }
-
 
     function createQuestionsInModal(userLatLng) {
         document.getElementById("questionProgressContainer").innerHTML = '';
