@@ -2,22 +2,14 @@
 var sites = [
     {
         id: 1,
-        name: "Lilla Varvsgatan",
+        name: "Lilla varvsgatan",
         narrativeShown: false,
-        lat: 55.613782925561736,
-        lng: 12.985121326984581,
+        lat: 55.61387261508563,
+        lng: 12.985146713491652,
         radius: 30,
     },
     {
         id: 2,
-        name: "Varvsgatan2",
-        narrativeShown: false,
-        lat: 55.613782925561736,
-        lng: 12.985121326984581,
-        radius: 30,
-    },
-    {
-        id: 3,
         name: "High Court",
         narrativeShown: false,
         lat: 55.6060555571401,
@@ -25,15 +17,15 @@ var sites = [
         radius: 30,
     },
     {
-        id: 4,
+        id: 3,
         name: "Malmöhus slott",
         narrativeShown: false,
         lat: 55.6049024047382,
         lng: 12.987601068527777,
-        radius: 30,
+        radius: 80,
     },
     {
-        id: 5,
+        id: 4,
         name: "Kommendant Huset",
         narrativeShown: false,
         lat: 55.60556634537834,
@@ -41,7 +33,7 @@ var sites = [
         radius: 30,
     },
     {
-        id: 6,
+        id: 5,
         name: "Slottsträdgårdens Kafé",
         narrativeShown: false,
         lat: 55.60390817772872,
@@ -49,7 +41,7 @@ var sites = [
         radius: 30,
     },
     {
-        id: 7,
+        id: 6,
         name: "Slottsmöllan",
         narrativeShown: false,
         lat: 55.60318043118816,
@@ -57,7 +49,7 @@ var sites = [
         radius: 30,
     },
     {
-        id: 8,
+        id: 7,
         name: "Stadsbiblioteket",
         narrativeShown: false,
         lat: 55.60073551768778,
@@ -65,7 +57,7 @@ var sites = [
         radius: 30,
     },
     {
-        id: 9,
+        id: 8,
         name: "Moderna Museet",
         narrativeShown: false,
         lat: 55.6049839790943,
@@ -73,7 +65,7 @@ var sites = [
         radius: 30,
     },
     {
-        id: 10,
+        id: 9,
         name: "World Maritime University",
         narrativeShown: false,
         lat: 55.60794709788444,
@@ -81,7 +73,7 @@ var sites = [
         radius: 30,
     },
     {
-        id: 11,
+        id: 10,
         name: "Niagara",
         narrativeShown: false,
         lat: 55.60894194054723,

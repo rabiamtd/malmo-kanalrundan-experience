@@ -6,7 +6,7 @@ function createLoadingScreenPage() {
     main.innerHTML = `
     <div class="loadingPageContainer">
         <div id="loader"></div> 
-        <img class="round" id="round-img" src="images/placeholder-1-1.png" width="130" height="130">
+        <img class="round" id="round-img" src="images/logo1.jpg" width="130" height="130">
     </div>
     `;
 
@@ -29,7 +29,7 @@ function createStartPage() {
     main.innerHTML = `
     <div class="StartPageContainer">
         <div class="rectangle-logo-container"> 
-            <img class="rectangle" src="images/placeholder-1-1.png" width="130" height="130">
+            <img class="rectangle" src="images/logo1.jpg" width="130" height="130">
             <button class="mainBtn" id="startTipsrundaBtn" type="submit">Starta tipsrunda</button>
         </div>
     </div> 

@@ -92,7 +92,7 @@ function createTipsrundaPage(narrativeData, siteId) {
         if (answeredQuestions.length === totalQuestions) {
             createSummaryPage();
         } else {
-            createUpdatedMapPage();
+            createUpdatedMapPage(sites);
         }
 
         /* if (answeredQuestions.length === 2) {

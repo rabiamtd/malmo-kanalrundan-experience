@@ -45,7 +45,7 @@ function createMap(mapContainerId, sites) {
         var animation = new L.PosAnimation();
 
         // Start the animation to the user's location
-        animation.run(userMarker._icon, map.latLngToLayerPoint(userLatLng), 1);
+        animation.run(userMarker._icon, map.latLngToLayerPoint(userLatLng), 0.5);
 
         createQuestionsInModal(userLatLng);
         console.log(userLatLng);
@@ -62,7 +62,7 @@ function createMap(mapContainerId, sites) {
 
     sites.forEach(site => {
         var circle = L.circle([site.lat, site.lng], {
-            color: 'red',
+            color: "#FB8500",
             fillColor: '#f03',
             fillOpacity: 0.1,
             radius: site.radius
@@ -72,7 +72,7 @@ function createMap(mapContainerId, sites) {
     function isUserNearSite(site, userLatLng) {
         var siteLatLng = L.latLng(site.lat, site.lng);
         var distance = userLatLng.distanceTo(siteLatLng);
-        var thresholdDistance = 50;
+        var thresholdDistance = 80;
         return distance < thresholdDistance;
     }
 
@@ -96,7 +96,7 @@ function createMap(mapContainerId, sites) {
             var animation = new L.PosAnimation();
 
             // Start the animation to the new position
-            animation.run(userMarker._icon, map.latLngToLayerPoint(newPosition), 1);
+            animation.run(userMarker._icon, map.latLngToLayerPoint(newPosition), 0.5);
         }
     }
 
