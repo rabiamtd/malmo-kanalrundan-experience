@@ -6,11 +6,10 @@ function createLoadingScreenPage() {
     main.innerHTML = `
     <div class="loadingPageContainer">
         <div id="loader"></div> 
-        <img class="round" id="round-img" src="images/logo1.jpg" width="130" height="130">
+        <img class="round" id="round-img" src="images/logo3.jpg" width="130" height="130">
     </div>
     `;
 
-    // adding event listener for DOMContentLoaded event
     document.addEventListener("DOMContentLoaded", timerFunction);
 
     let myTimer;
@@ -20,7 +19,7 @@ function createLoadingScreenPage() {
 
     function showPage() {
         document.getElementById("loader").style.display = "none";
-        createStartPage(); // call the function to create the loading screen
+        createStartPage();
     }
 }
 
@@ -29,18 +28,16 @@ function createStartPage() {
     main.innerHTML = `
     <div class="StartPageContainer">
         <div class="rectangle-logo-container"> 
-            <img class="rectangle" src="images/logo1.jpg" width="130" height="130">
+            <img class="rectangle" src="images/logo3.jpg" width="130" height="130">
             <button class="mainBtn" id="startTipsrundaBtn" type="submit">Starta tipsrunda</button>
         </div>
     </div> 
-`;
+    `;
 
     document.getElementById("startTipsrundaBtn").addEventListener("click", createAllowLocationPermissionPage);
 }
 
-
 function createAllowLocationPermissionPage() {
-
     main.innerHTML = `
     <div class="locationPermissionPageContainer">
         <div>
@@ -76,12 +73,9 @@ function handleUsernameSubmit() {
         return;
     }
 
-    // Save username to local storage
     localStorage.setItem("username", username);
-
     createIntroPageWithUsername(username);
 }
-
 
 function createIntroPageWithUsername(username) {
     main.innerHTML = `
@@ -97,4 +91,3 @@ function createIntroPageWithUsername(username) {
 
     document.getElementById("lets-go-button").addEventListener("click", createMapPage);
 }
-

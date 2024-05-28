@@ -49,3 +49,4 @@ function createNarrativePage(site, userLatLng) {
         }
     }
 }
+

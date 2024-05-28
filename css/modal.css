@@ -4,8 +4,8 @@
   position: absolute;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.9);
-  /* Dark background */
+  background-color: rgba(12, 57, 93, 0.9);
+  /* Dark blue background with opacity */
   z-index: 2;
   display: none;
 }
@@ -21,6 +21,79 @@
   }
 }
 
+/* Modal Content Box */
+.modal-contentBox {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  /* Added gap between child elements */
+}
+
+/* Modal Question Container */
+.modal-question-container {
+  background-color: #fff;
+  /* White background */
+  border-radius: 8px;
+  /* Rounded corners */
+  padding: 20px;
+  /* Increased padding */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  /* Soft shadow */
+  cursor: pointer;
+  /* Pointer cursor */
+  transition: background-color 0.3s, transform 0.3s;
+  /* Smooth transition */
+}
+
+.modal-question-container:hover {
+  background-color: #f0f0f0;
+  /* Light gray background on hover */
+  transform: translateY(-3px);
+  /* Lift on hover */
+}
+
+/* Modal Container */
+.modal-container.active .modal-contentBox {
+  width: 90%;
+  max-width: 600px;
+  height: auto;
+  /* Adjusted height to fit content */
+  background-color: #2783C4;
+  border-radius: 0.5rem;
+  position: relative;
+  box-shadow: 0 0 20px rgba(39, 131, 196, 0.4);
+  overflow-y: auto;
+  padding: 20px;
+}
+
+/* Close Button */
+#close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #FAAB0D;
+  color: #0C395D;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+
+/* Save and Close Button */
+#saveClose-button {
+  background-color: #FAC912;
+  color: #000;
+  padding: 12px 28px;
+  border-radius: 10px;
+}
+
+
 /* Active Modal Container */
 .modal-container.active {
   display: flex;
@@ -33,14 +106,22 @@
 
 /* Modal Content Box */
 .modal-container.active .modal-contentBox {
-  width: 92vw;
-  height: 90vh;
-  background-color: #121212;
-  /* Dark background */
+  width: 90%;
+  /* Adjusted width */
+  max-width: 600px;
+  /* Added maximum width */
+  height: 80vh;
+  /* Adjusted height */
+  background-color: #2783C4;
+  /* Light blue */
   border-radius: 0.5rem;
   position: relative;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-  /* Soft shadow for depth */
+  box-shadow: 0 0 20px rgba(39, 131, 196, 0.4);
+  /* Shadow color similar to light blue */
+  overflow-y: auto;
+  /* Added overflow for scroll if needed */
+  padding: 20px;
+  /* Added padding */
 }
 
 /* Modal Content Box */
@@ -52,21 +133,27 @@
 /* Close Button */
 #close-button {
   position: absolute;
-  top: 0.8rem;
+  top: 1rem;
+  /* Adjusted top position */
   right: 1rem;
-  width: 1.5rem;
-  height: 1.5rem;
+  /* Adjusted right position */
+  width: 30px;
+  /* Adjusted width */
+  height: 30px;
+  /* Adjusted height */
   border-radius: 50%;
-  background-color: #333;
-  /* Dark gray background */
-  color: #fff;
-  /* White color */
+  background-color: #FAAB0D;
+  /* Yellow */
+  color: #0C395D;
+  /* Dark blue text */
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
   /* Soft shadow for visibility */
+  z-index: 1;
+  /* Adjusted z-index to be above modal content */
 }
 
 /* Modal Button */
@@ -76,19 +163,43 @@
   border-radius: 6px;
   color: #fff;
   /* White color */
-  background: #0277bd;
-  /* Deep blue background */
+  background: #0C395D;
+  /* Dark blue background */
   border: none;
-  box-shadow: 0 0.5px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.5px 1px rgba(12, 57, 93, 0.1);
+  /* Shadow color similar to dark blue */
   cursor: pointer;
 }
 
 /* Save and Close Button */
 #saveClose-button {
-  background-color: #f57c00;
-  /* Orange color */
-  color: #fff;
-  /* White color */
+  background-color: #FAC912;
+  /* Light yellow */
+  color: #000;
+  /* Black color */
   padding: 12px 28px;
   border-radius: 10px;
+}
+
+.status-box {
+  position: absolute;
+  z-index: 1000;
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.status-box-arrow {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #fff;
 }

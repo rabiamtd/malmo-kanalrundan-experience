@@ -1,3 +1,4 @@
+/* Tipsrunda Page Container */
 .tipsrundaPageContainer {
     width: 95%;
     height: 90%;
@@ -8,25 +9,78 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
 }
 
-#tipsrunda-questions-container {
-    height: auto;
+/* Page Title */
+.tipsrundaPageContainer h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
 }
 
+/* Tipsrunda Progress */
 #tipsrunda-progress-bar-container {
-    height: 10px;
-    width: 90%;
-    border: 1px solid white;
+    margin-top: 20px;
 }
 
+/* Tipsrunda Progress Bar */
 #tipsrunda-progress-bar {
     height: 10px;
-    background-color: pink;
+    background-color: #0C395D;
+    /* Darker blue */
+    border-radius: 5px;
 }
 
+/* Tipsrunda Questions Container */
+#tipsrunda-questions-container {
+    margin-top: 20px;
+}
+
+/* Option Button */
+.option-button {
+    background-color: #0C395D;
+    /* Darker blue */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Option Button Hover */
+.option-button:hover {
+    background-color: #072540;
+    /* Darker blue on hover */
+    transform: translateY(-3px);
+    /* Lift on hover */
+}
+
+/* Selected Option Button */
 .option-button.selected {
     background-color: #000000;
     border-color: #badbcc;
-    color: white;
+}
+
+/* Save Button */
+#saveBtn {
+    background-color: #FAC912;
+    /* Yellow */
+    color: #000000;
+    /* Black */
+    border: none;
+    border-radius: 5px;
+    padding: 12px 28px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Save Button Hover */
+#saveBtn:hover {
+    background-color: #F7BB07;
+    /* Lighter yellow on hover */
 }

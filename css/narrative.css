@@ -1,3 +1,4 @@
+/* Narrative Page Container */
 .narrativePageContainer {
     height: 100%;
     width: 100%;
@@ -5,4 +6,42 @@
     color: white;
     outline-color: yellow;
     margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Dialogue Container */
+.dialogue-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Dialogue Title */
+.dialogue-container h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* Dialogue Text */
+.dialogue-container p {
+    font-size: 18px;
+}
+
+/* Tipsrunda Button */
+#tipsrundaQuestion-btn {
+    padding: 12px 24px;
+    border-radius: 6px;
+    background-color: #FAC912;
+    color: #000;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#tipsrundaQuestion-btn:hover {
+    background-color: #F7C41C;
+    color: #333;
 }
