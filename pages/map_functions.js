@@ -3,7 +3,7 @@
 let userMarker = null;
 let userLatLng = null;
 
-function createMap(mapContainerId, sites) {
+function createMap(mapContainerId, sites, siteClickHandler) {
     var map = L.map(mapContainerId).setView([55.60544094541752, 12.998602498847754], 14);
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -36,10 +36,7 @@ function createMap(mapContainerId, sites) {
             map.removeLayer(userMarker);
         }
 
-        // Create the userMarker at the user's location
         userMarker = L.marker(userLatLng).addTo(map);
-
-        // Ensure the marker is added to the map correctly
         userMarker.setLatLng(userLatLng);
 
         createQuestionsInModal(userLatLng);
@@ -63,9 +60,9 @@ function createMap(mapContainerId, sites) {
     });
 
     function isUserNearSite(site, userLatLng) {
-        var siteLatLng = L.latLng(site.lat, site.lng);  // Correct function name is L.latLng
+        var siteLatLng = L.latLng(site.lat, site.lng);
         var distance = userLatLng.distanceTo(siteLatLng);
-        var thresholdDistance = site.radius; // Ensure correct radius check
+        var thresholdDistance = site.radius;
         return distance < thresholdDistance;
     }
 
@@ -77,15 +74,10 @@ function createMap(mapContainerId, sites) {
             enableHighAccuracy: true
         });
 
-        // Check if userMarker exists
         if (userMarker) {
-            // Get current position of userMarker
             var currentPosition = userMarker.getLatLng();
-
-            // Update the marker position to the user's current location
             userMarker.setLatLng(currentPosition);
 
-            // Update modal questions
             if (userLatLng) {
                 createQuestionsInModal(userLatLng);
             }
@@ -114,10 +106,10 @@ function createMap(mapContainerId, sites) {
                     modalQuestion.appendChild(playIcon);
 
                     modalQuestion.addEventListener("click", function () {
-                        if (typeof createNarrativePage === 'function') {
-                            createNarrativePage(site, userLatLng);
+                        if (typeof siteClickHandler === 'function') {
+                            siteClickHandler(site, userLatLng);
                         } else {
-                            console.warn('createNarrativePage function is not defined');
+                            console.warn('siteClickHandler function is not defined');
                         }
                     });
                 } else {
@@ -144,9 +136,4 @@ function createMap(mapContainerId, sites) {
             document.getElementById("questionProgressContainer").append(modalQuestion);
         });
     }
-}
-
-// Placeholder function, to be defined in narrative.js
-function createNarrativePage(site, userLatLng) {
-    console.warn('createNarrativePage function is not defined');
 }

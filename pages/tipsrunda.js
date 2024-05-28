@@ -6,9 +6,9 @@ function createTipsrundaPage(narrativeData, siteId) {
     const main = document.querySelector('main');
     main.innerHTML = `
     <div class="tipsrundaPageContainer">
-    <h1>Memory Calibration and Synchronization Protocol MCSP</h1>
-    <p>Frågor</p>
-    <p>${answeredQuestions.length}/${totalQuestions}</p>
+        <h1>Memory Calibration and Synchronization Protocol MCSP</h1>
+        <p>Frågor</p>
+        <p>${answeredQuestions.length}/${totalQuestions}</p>
         <div class="tipsrundaContainer"> 
             <div id="tipsrunda-progress-bar-container">
                 <div id="tipsrunda-progress-bar"></div>
@@ -71,7 +71,7 @@ function createTipsrundaPage(narrativeData, siteId) {
 
     // Update the button text based on whether it's the last question
     const saveBtn = document.getElementById('saveBtn');
-    if (answeredQuestions.length === 1) {
+    if (answeredQuestions.length === totalQuestions - 1) {
         saveBtn.textContent = "Save and exit tipsrunda";
     } else {
         saveBtn.textContent = "Save and return to map";
@@ -95,37 +95,31 @@ function createTipsrundaPage(narrativeData, siteId) {
             createUpdatedMapPage(sites);
         }
 
-        /* if (answeredQuestions.length === 2) {
-             createSummaryPage();
-         } else {
-             createUpdatedMapPage(sites);
-         }*/
-
         saveBtn.disabled = true;
     }
 
     function createUpdatedMapPage(sites) {
         const main = document.querySelector('main');
         main.innerHTML = `
-    <div id="mapPageContainer">
-        <div class="modal-container">
-            <div class="modal-contentBox">
-                <h1 class="title">Frågor</h1>
-                <div id="questionProgressContainer"></div>
-                <button id="saveClose-button">Spara och stäng</button>
-                <div id="close-button">X</div>
+        <div id="mapPageContainer">
+            <div class="modal-container">
+                <div class="modal-contentBox">
+                    <h1 class="title">Frågor</h1>
+                    <div id="questionProgressContainer"></div>
+                    <button id="saveClose-button">Spara och stäng</button>
+                    <div id="close-button">X</div>
+                </div>
             </div>
+
+            <div id="Qbtn-container">
+                <button class="modal-button">Frågor</button>
+            </div>
+
+            <div id="map"></div>   
         </div>
+        `;
 
-        <div id="Qbtn-container">
-            <button class="modal-button">Frågor</button>
-        </div>
-
-        <div id="map"></div>   
-    </div>
-    `;
-
-        createMap("map", sites);
+        createMap("map", sites, handleSiteClick); // Pass the handler function 
     }
 
     function updateProgressBar(questionsAnswered, totalQuestions) {

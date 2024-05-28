@@ -1,9 +1,5 @@
 "use strict";
 
-/* map.js: */
-
-
-// initialize variables to keep track of questions
 let totalQuestions = siteNarrativesAndQuestions.length;
 
 function createMapPage() {
@@ -26,5 +22,10 @@ function createMapPage() {
     </div>
     `;
 
-    createMap('map', sites);
+    createMap('map', sites, handleSiteClick);
+}
+
+// Handler function to call createNarrativePage
+function handleSiteClick(site, userLatLng) {
+    createNarrativePage(site, userLatLng);
 }
