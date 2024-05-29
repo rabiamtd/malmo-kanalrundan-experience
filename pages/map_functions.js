@@ -14,11 +14,14 @@ function createMap(mapContainerId, sites, siteClickHandler) {
     const updateLocationButton = L.control({ position: 'bottomright' });
     updateLocationButton.onAdd = function () {
         const div = L.DomUtil.create('div', 'update-location-button');
-        div.innerHTML = '<button>Update Location</button>';
-        div.firstChild.addEventListener('click', updateLocation);
+        const button = document.createElement('button');
+        button.innerHTML = '<i class="fa-solid fa-location-crosshairs"></i>';
+        button.addEventListener('click', updateLocation);
+        div.appendChild(button);
         return div;
     };
     updateLocationButton.addTo(map);
+
 
     launchQModal();
 
@@ -39,9 +42,13 @@ function createMap(mapContainerId, sites, siteClickHandler) {
         userMarker = L.marker(userLatLng).addTo(map);
         userMarker.setLatLng(userLatLng);
 
+        // Add a popup to the user marker
+        userMarker.bindPopup("You are here").openPopup();
+
         createQuestionsInModal(userLatLng);
         console.log(userLatLng);
     }
+
 
     function onLocationError(e) {
         alert(e.message);
@@ -79,10 +86,17 @@ function createMap(mapContainerId, sites, siteClickHandler) {
             userMarker.setLatLng(currentPosition);
 
             if (userLatLng) {
+                // Fly to the user's location with a smoother animation
+                map.flyTo(userLatLng, 16, {
+                    duration: 2, // Duration of the animation in seconds
+                    easeLinearity: 0.25 // Easing factor for the animation
+                });
+
                 createQuestionsInModal(userLatLng);
             }
         }
     }
+
 
     function createQuestionsInModal(userLatLng) {
         document.getElementById("questionProgressContainer").innerHTML = '';
@@ -136,4 +150,7 @@ function createMap(mapContainerId, sites, siteClickHandler) {
             document.getElementById("questionProgressContainer").append(modalQuestion);
         });
     }
+
+    // Set max bounds to restrict zooming out further than displayed bounds
+    map.setMaxBounds(map.getBounds());
 }
