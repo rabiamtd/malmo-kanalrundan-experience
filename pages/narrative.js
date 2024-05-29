@@ -45,23 +45,40 @@ function createNarrativePage(site, userLatLng) {
             const narrativeHeadline = document.querySelector(".narrative-headline");
             const narrativeText = document.querySelector(".narrative-text");
 
-            // Animate the headline text using the TextPlugin
+            /*// Animate the headline text using the TextPlugin
             gsap.to(narrativeHeadline, {
                 duration: 2,
                 text: {
                     value: siteData.narrative.narrativeHeadline,
                     ease: "none"
                 }
-            });
+            });*/
 
-            // Animate the narrative text using the TextPlugin
-            gsap.to(narrativeText, {
-                duration: 10,
-                text: {
-                    value: siteData.narrative.siteNarrative,
-                    ease: "none"
+
+            // Set up the initial state
+            narrativeText.innerHTML = "";
+
+            // Define the narrative text
+            const narrative = siteData.narrative.siteNarrative;
+
+            // Define the duration for the typewriter effect
+            const typewriterDuration = 0.1; // Faster typewriter effect
+            const delayBetweenCharacters = 0.05; // Shorter delay between characters
+
+            // Set up the typewriter effect
+            const revealCharacters = () => {
+                for (let i = 0; i <= narrative.length; i++) {
+                    gsap.to(narrativeText, {
+                        duration: typewriterDuration, // Faster character reveal
+                        text: narrative.substring(0, i), // Reveal characters gradually
+                        delay: typewriterDuration + delayBetweenCharacters * i, // Shorter delay between characters
+                        ease: "none",
+                    });
                 }
-            });
+            };
+
+            // Trigger the typewriter effect after a delay for a more dynamic feel
+            setTimeout(revealCharacters, 500);
 
             // Return the tipsrunda question for further processing if needed
             return siteData.tipsrundaQuestion;
