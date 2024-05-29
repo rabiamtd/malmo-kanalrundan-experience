@@ -13,11 +13,21 @@
 /* Fonts */
 
 @font-face {
+    font-family: Orbitron-SemiBold;
+    src: url("../fonts/Orbitron/static/Orbitron-SemiBold.ttf");
+}
+
+@font-face {
     font-family: Orbitron-Regular;
     src: url("../fonts/Orbitron/static/Orbitron-Regular.ttf");
 }
 
 @font-face {
-    font-family: Kalam;
-    src: url("../fonts/Kalam/Kalam-Regular.ttf");
+    font-family: IMFellEnglish-Regular;
+    src: url("../fonts/IM_Fell_English/IMFellEnglish-Regular.ttf");
+}
+
+@font-face {
+    font-family: CormorantUpright-Light;
+    src: url("../fonts/IM_Fell_English/IMFellEnglish-Italic.ttf");
 }

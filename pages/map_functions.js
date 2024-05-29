@@ -42,12 +42,13 @@ function createMap(mapContainerId, sites, siteClickHandler) {
         userMarker = L.marker(userLatLng).addTo(map);
         userMarker.setLatLng(userLatLng);
 
-        // Add a popup to the user marker
-        userMarker.bindPopup("Din position").openPopup();
+        // Add a popup to the user marker with maximum width
+        userMarker.bindPopup("Din position", { maxWidth: "200px" }).openPopup();
 
         createQuestionsInModal(userLatLng);
         console.log(userLatLng);
     }
+
 
 
     function onLocationError(e) {

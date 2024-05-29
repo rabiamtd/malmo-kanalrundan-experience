@@ -26,13 +26,14 @@
 .dialogue-container h1 {
     font-size: 24px;
     margin-bottom: 10px;
-    font-family: Kalam;
+    font-family: IMFellEnglish-Regular;
 }
 
 /* Dialogue Text */
 .dialogue-container p {
     font-size: 18px;
-    font-family: Kalam;
+    font-family: IMFellEnglish-Italic;
+    font-style: italic;
 }
 
 /* Tipsrunda Button */

@@ -16,7 +16,7 @@ function createNarrativePage(site, userLatLng) {
     <div class="narrativePageContainer active">
         <div class="dialogue-container">
             <h1 class="narrative-headline"></h1>
-            <p class="narrative-text">Loading...</p>
+            <p class="narrative-text"></p>
         </div>
         <button class="mainBtn" id="tipsrundaQuestion-btn">Tipsrundafråga</button>
     </div>

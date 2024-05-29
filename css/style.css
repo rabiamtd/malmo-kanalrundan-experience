@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -9,20 +10,40 @@ body {
 }
 
 main {
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
 }
 
 .round {
     border-radius: 50%;
 }
 
-.mainBtn,
 button {
-    border: none;
     cursor: pointer;
-    font: inherit;
+    border: none;
 }
+
+.mainBtn {
+    padding: 0.75rem;
+    background-color: var(--yellow-light);
+    /* Main yellow */
+    width: 153px;
+    height: 40px;
+    color: var(--blue-dark);
+    /* Dark blue text */
+    font-family: Orbitron-SemiBold;
+    font-size: 0.99rem;
+    transition: background-color 0.3s;
+    transition: color 0.3s;
+    border-radius: 15px;
+}
+
+.mainBtn:hover {
+    background-color: var(--yellow-dark);
+    /* Darker yellow on hover */
+    color: var(--white);
+}
+
 
 body {
     font-family: Orbitron-Regular;
