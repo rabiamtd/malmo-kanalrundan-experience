@@ -15,7 +15,7 @@ function createNarrativePage(site, userLatLng) {
     main.innerHTML = `
     <div class="narrativePageContainer">
         <div class="dialogue-container">
-            <h1 class="narrative-headline">Loading...</h1>
+            <h1 class="narrative-headline"></h1>
             <p class="narrative-text">Loading...</p>
         </div>
         <button class="mainBtn" id="tipsrundaQuestion-btn">Tipsrundafråga</button>
@@ -41,46 +41,38 @@ function createNarrativePage(site, userLatLng) {
             console.log(siteData.narrative.narrativeHeadline);
             console.log(siteData.narrative.siteNarrative);
 
-            // Set the initial text content before animating
             const narrativeHeadline = document.querySelector(".narrative-headline");
             const narrativeText = document.querySelector(".narrative-text");
 
-            /*// Animate the headline text using the TextPlugin
+            // Animate the headline text using the TextPlugin
             gsap.to(narrativeHeadline, {
-                duration: 2,
+                duration: 5,
                 text: {
                     value: siteData.narrative.narrativeHeadline,
                     ease: "none"
-                }
-            });*/
+                },
+                onComplete: () => {
+                    // Define the narrative text
+                    const narrative = siteData.narrative.siteNarrative;
 
+                    // Define the duration for the typewriter effect
+                    const typewriterDuration = 0.08; // Duration for each character
+                    const delayBetweenCharacters = 0.03; // Delay between each character
+                    const totalDuration = (narrative.length * (typewriterDuration + delayBetweenCharacters));
 
-            // Set up the initial state
-            narrativeText.innerHTML = "";
-
-            // Define the narrative text
-            const narrative = siteData.narrative.siteNarrative;
-
-            // Define the duration for the typewriter effect
-            const typewriterDuration = 0.1; // Faster typewriter effect
-            const delayBetweenCharacters = 0.05; // Shorter delay between characters
-
-            // Set up the typewriter effect
-            const revealCharacters = () => {
-                for (let i = 0; i <= narrative.length; i++) {
+                    // Use GSAP's stagger feature for a more accurate typewriter effect
                     gsap.to(narrativeText, {
-                        duration: typewriterDuration, // Faster character reveal
-                        text: narrative.substring(0, i), // Reveal characters gradually
-                        delay: typewriterDuration + delayBetweenCharacters * i, // Shorter delay between characters
+                        duration: totalDuration,
+                        text: {
+                            value: narrative,
+                            delimiter: "",
+                        },
                         ease: "none",
+                        delay: 2 // Delay before starting the narrative text animation
                     });
                 }
-            };
+            });
 
-            // Trigger the typewriter effect after a delay for a more dynamic feel
-            setTimeout(revealCharacters, 500);
-
-            // Return the tipsrunda question for further processing if needed
             return siteData.tipsrundaQuestion;
         } else {
             // Handle case where site data is not found
