@@ -27,6 +27,7 @@ function launchQModal() {
   }
 }
 
+
 function displayStatusBox(message, parentElement) {
   const existingStatusBox = document.querySelector(".status-box");
   if (existingStatusBox) {

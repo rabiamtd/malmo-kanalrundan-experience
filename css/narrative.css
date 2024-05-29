@@ -12,6 +12,10 @@
     align-items: center;
 }
 
+.narrativePageContainer.active {
+    animation: fadeIn2 0.5s;
+}
+
 /* Dialogue Container */
 .dialogue-container {
     text-align: center;
@@ -44,4 +48,15 @@
 #tipsrundaQuestion-btn:hover {
     background-color: #F7C41C;
     color: #333;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn2 {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }

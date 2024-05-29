@@ -31,6 +31,9 @@
 
 /* Modal Question Container */
 .modal-question-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: #fff;
   /* White background */
   border-radius: 8px;
@@ -93,7 +96,6 @@
   border-radius: 10px;
 }
 
-
 /* Active Modal Container */
 .modal-container.active {
   display: flex;
@@ -101,7 +103,8 @@
   align-items: center;
   width: 100vw;
   height: 100vh;
-  animation: fadeIn 0.3s;
+  animation: fadeIn 3s;
+  /* Apply fade-in animation */
 }
 
 /* Modal Content Box */
@@ -171,15 +174,13 @@
   cursor: pointer;
 }
 
-/* Save and Close Button */
-#saveClose-button {
-  background-color: #FAC912;
-  /* Light yellow */
-  color: #000;
-  /* Black color */
-  padding: 12px 28px;
-  border-radius: 10px;
+.site-info-container {
+  display: flex;
+  flex-direction: column;
 }
+
+
+/*Status box styles*/
 
 .status-box {
   position: absolute;

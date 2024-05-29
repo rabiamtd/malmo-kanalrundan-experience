@@ -5,7 +5,7 @@ let totalQuestions = siteNarrativesAndQuestions.length;
 function createMapPage() {
     main.innerHTML = `
     <div id="mapPageContainer">
-        <div class="modal-container">
+        <div class="modal-container modal">
             <div class="modal-contentBox">
                 <h1 class="title">Frågor</h1>
                 <div id="questionProgressContainer"></div>

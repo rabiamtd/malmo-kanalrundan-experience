@@ -13,7 +13,7 @@ function createNarrativePage(site, userLatLng) {
 
     const main = document.querySelector('main');
     main.innerHTML = `
-    <div class="narrativePageContainer">
+    <div class="narrativePageContainer active">
         <div class="dialogue-container">
             <h1 class="narrative-headline"></h1>
             <p class="narrative-text">Loading...</p>
@@ -47,9 +47,11 @@ function createNarrativePage(site, userLatLng) {
             // Animate the headline text using the TextPlugin
             gsap.to(narrativeHeadline, {
                 duration: 5,
+                delay: 1,
                 text: {
                     value: siteData.narrative.narrativeHeadline,
-                    ease: "none"
+                    ease: "none",
+
                 },
                 onComplete: () => {
                     // Define the narrative text
