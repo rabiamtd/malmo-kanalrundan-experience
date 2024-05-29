@@ -16,3 +16,8 @@
     font-family: Orbitron-Regular;
     src: url("../fonts/Orbitron/static/Orbitron-Regular.ttf");
 }
+
+@font-face {
+    font-family: Kalam;
+    src: url("../fonts/Kalam/Kalam-Regular.ttf");
+}

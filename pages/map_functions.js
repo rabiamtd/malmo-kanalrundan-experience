@@ -43,7 +43,7 @@ function createMap(mapContainerId, sites, siteClickHandler) {
         userMarker.setLatLng(userLatLng);
 
         // Add a popup to the user marker
-        userMarker.bindPopup("You are here").openPopup();
+        userMarker.bindPopup("Din position").openPopup();
 
         createQuestionsInModal(userLatLng);
         console.log(userLatLng);
