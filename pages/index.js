@@ -1,5 +1,17 @@
 "use strict";
 
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service_worker.js')
+            .then(registration => {
+                console.log('Service Worker registered with scope:', registration.scope);
+            }).catch(error => {
+                console.log('Service Worker registration failed:', error);
+            });
+    });
+}
+
+
 // Check localStorage for saved data on narrative shown, answered questions
 const savedSites = JSON.parse(localStorage.getItem('sites'));
 const answeredQuestions = JSON.parse(localStorage.getItem('answeredQuestions')) || [];

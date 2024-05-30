@@ -45,7 +45,7 @@ button {
     padding: 0.75rem;
     background-color: var(--yellow-light);
     width: 153px;
-    height: 44px;
+    height: auto;
     color: var(--blue-dark);
     font-family: Orbitron-SemiBold;
     font-size: 0.99rem;

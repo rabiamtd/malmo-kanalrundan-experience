@@ -7,7 +7,7 @@ function createLoadingScreenPage() {
     <div class="loadingPageContainer">
         <div class="loaderContainer">
             <div id="loader"></div> 
-            <img class="round" id="round-img" src="images/logo.jpg" alt="logo image of a boat tour company" width="150" height="150">
+            <img class="round" id="round-img" src="images/logo.png" alt="logo image of a boat tour company" width="150" height="150">
         </div>
     </div>
     `;
@@ -30,7 +30,7 @@ function createStartPage() {
     main.innerHTML = `
     <div class="StartPageContainer">
         <div class="rectangle-logo-container"> 
-            <img class="rectangle" alt="logo image of a boat tour company" src="images/logo.jpg">
+            <img class="rectangle" alt="logo image of a boat tour company" src="images/logo.png">
             <button class="mainBtn" id="startTipsrundaBtn" type="submit">Start boat tour</button>
         </div>
     </div> 
