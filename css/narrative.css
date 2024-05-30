@@ -2,56 +2,57 @@
 .narrativePageContainer {
     height: 100%;
     width: 100%;
-    background-color: #023047;
-    color: white;
+    background-color: var(--white);
+    color: black;
     outline-color: yellow;
     margin: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    -webkit-box-shadow: inset 2px 2px 100px 120px #FCF5E5;
+    box-shadow: inset 2px 2px 100px 120px #FCF5E5;
 }
 
 .narrativePageContainer.active {
     animation: fadeIn2 0.5s;
 }
 
+.border-ridge {
+    border-style: ridge;
+}
+
 /* Dialogue Container */
 .dialogue-container {
-    text-align: center;
     margin-bottom: 20px;
+    max-width: 340px;
+    width: 90%;
+    height: 80%;
+    max-height: 630px;
+    padding: 0.75rem;
 }
 
 /* Dialogue Title */
 .dialogue-container h1 {
-    font-size: 24px;
+    font-size: 2rem;
     margin-bottom: 10px;
     font-family: IMFellEnglish-Regular;
+    text-align: center;
 }
 
 /* Dialogue Text */
 .dialogue-container p {
-    font-size: 18px;
-    font-family: IMFellEnglish-Italic;
+    font-size: 1rem;
+    font-family: 'IMFellEnglish-Italic', serif;
     font-style: italic;
 }
 
 /* Tipsrunda Button */
 #tipsrundaQuestion-btn {
-    padding: 12px 24px;
-    border-radius: 6px;
-    background-color: #FAC912;
-    color: #000;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
+    max-width: 340px;
+    width: 90%;
 }
 
-#tipsrundaQuestion-btn:hover {
-    background-color: #F7C41C;
-    color: #333;
-}
 
 /* Fade In Animation */
 @keyframes fadeIn2 {

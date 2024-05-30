@@ -9,13 +9,13 @@ function createMapPage() {
             <div class="modal-contentBox">
                 <h1 class="title">Frågor</h1>
                 <div id="questionProgressContainer"></div>
-                <button id="saveClose-button">Spara och stäng</button>
+                <button class="mainBtn" id="saveClose-button">Stäng</button>
                 <div id="close-button">X</div>
             </div>
         </div>
 
         <div id="Qbtn-container">
-            <button class="modal-button">Frågor</button>
+            <button class="mainBtn modal-button" id="modalBtn">Frågor</button>
         </div>
 
         <div id="map"></div>   

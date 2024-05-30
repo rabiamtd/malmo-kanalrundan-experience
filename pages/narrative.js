@@ -14,11 +14,11 @@ function createNarrativePage(site, userLatLng) {
     const main = document.querySelector('main');
     main.innerHTML = `
     <div class="narrativePageContainer active">
-        <div class="dialogue-container">
+        <div class="dialogue-container border-ridge">
             <h1 class="narrative-headline"></h1>
             <p class="narrative-text"></p>
         </div>
-        <button class="mainBtn" id="tipsrundaQuestion-btn">Tipsrundafråga</button>
+        <button class="mainBtn" id="tipsrundaQuestion-btn">Tipsrundafråga ></button>
     </div>
     `;
 

@@ -43,7 +43,7 @@ function createAllowLocationPermissionPage() {
     main.innerHTML = `
 <div class="locationPermissionPageContainer">
     <div id="allowPermissionBoxContainer">
-        <p>Malmö kanalrundan behöver tillgång till din plats i bakgrunden för att köra upplevelsen i bakgrunden och informera dig om intressanta saker nära dig och låsa upp de frågor du stöter på. Gå till enhetens inställningar för att aktivera platstjänster och välj 'Tillåt alltid'.
+        <p>Malmö kanalrundan behöver tillgång till din plats i bakgrunden för att informera dig om intressanta saker nära dig och låsa upp de frågor du stöter på. Gå till enhetens inställningar för att aktivera platstjänster och välj 'Tillåt alltid'.
         </p>
         <button class="mainBtn" id="location-ok-btn">OK</button>
     </div>
@@ -56,11 +56,15 @@ function createAllowLocationPermissionPage() {
 function createIntroPage() {
     main.innerHTML = `
 <div class="introPageContainer">
-    <div>
-        <p>Astrid: Hey there! Welcome to the Memory Calibration and Synchronization Protocol. I'm Astrid, your virtual guide designed by MCSP.</p>
-        <p>Astrid: Oh, but before we dive in, what should I call you?</p>
-        <input type="text" id="username-input" placeholder="Your name">
-        <button id="username-submit-btn">Submit</button>
+    <div class="introBoxContainer">
+        <div class="introDialogueContainer">
+            <p>Hey there! Welcome to the Memory Calibration and Synchronization Protocol. I'm Astrid, your virtual guide designed by MCSP.</p>
+            <p>Oh, but before we dive in, what should I call you?</p>
+        </div>
+        <div>
+            <input type="text" id="username-input" placeholder="Your name">
+            <button class="mainBtn" id="username-submit-btn">Submit</button>
+        </div>
     </div>
 </div>
 `;
@@ -80,16 +84,19 @@ function handleUsernameSubmit() {
 }
 
 function createIntroPageWithUsername(username) {
-    main.innerHTML = `
-<div class="introPageContainer">
-    <div>
-        <p>Astrid: Hey there, ${username}! Malmö Kanalrundan is MCSP's way of blending history with modern tech to keep Malmö's story alive.</p>
-        <p>Astrid: And with your help, we're making sure this city's rich past isn't forgotten.</p>
-        <p>Astrid: So, ${username}, ready to join me on this journey through time and memory?</p>
-        <button id="lets-go-button">Let's go!</button>
-    </div>
-</div>
-`;
+    main.innerHTML =
+        `<div class="introPageContainer">
+            <div class="introBoxContainer">
+                <div class="introDialogueContainer">
+                    <p>Hey there, <span style="color:#8ecae6">${username}</span>! Malmö Kanalrundan is MCSP's way of blending history with modern tech to keep Malmö's story alive.</p>
+                    <p>And with your help, we're making sure this city's rich past isn't forgotten.</p>
+                    <p>So, <span style="color:#8ecae6">${username}</span>, ready to join me on this journey through time and memory?</p>
+                </div>
+
+                <button class="mainBtn" id="lets-go-button">Let's go!</button>
+                </div>
+            </div>
+        </div>`;
 
     document.getElementById("lets-go-button").addEventListener("click", createMapPage);
 }

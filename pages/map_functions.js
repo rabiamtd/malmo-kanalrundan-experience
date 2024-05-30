@@ -14,10 +14,10 @@ function createMap(mapContainerId, sites, siteClickHandler) {
     const updateLocationButton = L.control({ position: 'bottomright' });
     updateLocationButton.onAdd = function () {
         const div = L.DomUtil.create('div', 'update-location-button');
-        const button = document.createElement('button');
-        button.innerHTML = '<i class="fa-solid fa-location-crosshairs"></i>';
-        button.addEventListener('click', updateLocation);
-        div.appendChild(button);
+        let crosshairsIcon = document.createElement("i");
+        crosshairsIcon.classList.add("fa-solid", "fa-location-crosshairs", "status-icon", "crosshairs-icon");
+        div.appendChild(crosshairsIcon);
+        div.addEventListener('click', updateLocation);
         return div;
     };
     updateLocationButton.addTo(map);
@@ -43,7 +43,7 @@ function createMap(mapContainerId, sites, siteClickHandler) {
         userMarker.setLatLng(userLatLng);
 
         // Add a popup to the user marker with maximum width
-        userMarker.bindPopup("Din position", { maxWidth: "200px" }).openPopup();
+        /* userMarker.bindPopup("Din position", { maxWidth: "200px" }).openPopup();*/
 
         createQuestionsInModal(userLatLng);
         console.log(userLatLng);

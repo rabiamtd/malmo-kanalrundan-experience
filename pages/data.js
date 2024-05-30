@@ -168,7 +168,7 @@ const siteNarrativesAndQuestions = [
         id: 9,
         narrative: {
             narrativeHeadline: "Slutsats…",
-            siteNarrative: "I stort sett hela kanalrummet klassas som fast fornlämning vilket fastställer att det är en kulturhistoriskt mycket viktig miljö som ska behandlas omsorgsfullt. Två tidslager bedöms vara särskilt viktiga för kanalrummets karaktär: 1600-talet då kanalen var en del av stadens fortifikation vilket idag är tydligast på bastionerna. 1800-talet då kanalen blev en plats för rekreation och promenader, något som fortfarande är tydligt vid Södra promenaden.",
+            siteNarrative: "I stort sett hela kanalrummet klassas som fast fornlämning vilket fastställer att det är en kulturhistoriskt mycket viktig miljö som ska behandlas omsorgsfullt. Två tidslager bedöms vara särskilt viktiga för kanalrummets karaktär. 1600-talet då kanalen var en del av stadens fortifikation vilket idag är tydligast på bastionerna. 1800-talet då kanalen blev en plats för rekreation och promenader, något som fortfarande är tydligt vid Södra promenaden.",
         },
         tipsrundaQuestion: {
             question: "Vad är det mest omdiskuterade inslaget vid det gamla hamnkontoret, som sedan våren 2015 hyser World Maritime University?",

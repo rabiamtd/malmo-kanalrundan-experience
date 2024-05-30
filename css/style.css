@@ -35,7 +35,7 @@ button {
     font-size: 0.99rem;
     transition: background-color 0.3s;
     transition: color 0.3s;
-    border-radius: 15px;
+    border-radius: 10px;
 }
 
 .mainBtn:hover {
@@ -44,6 +44,13 @@ button {
     color: var(--white);
 }
 
+.borders {
+    font: bold 15px Arial, Helvetica, sans-serif;
+    width: 25em;
+    padding: 5px;
+    margin: 10px 0;
+    border: thick #FFB703;
+}
 
 body {
     font-family: Orbitron-Regular;
