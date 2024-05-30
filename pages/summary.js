@@ -47,6 +47,8 @@ function createSummaryPage() {
                 <p>Made by Rabia Ahmadi</p>
                 <p>Crossmedia projekt</p>
                 <p>2024</p>
+                <br>
+                <a href="https://forms.gle/xpQMLz7Fvy1zrRwQ8">Share your thoughts about Malmö Kanalrundan</a>
              </div>
         `;
 
