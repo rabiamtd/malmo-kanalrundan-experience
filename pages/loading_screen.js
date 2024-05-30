@@ -108,8 +108,8 @@ function createIntroPageWithUsername(username) {
         <h1>MCSP</h1>
         <div class="installDialogueContainer">
             <p class="message">Now, before we start our journey, let's make sure you get the best experience.</p>
-            <p class="message">To do that, I recommend installing Malmö Kanalrundan as an app on your device. This way, you get the full immersive experience.</p>
-            <p class="message">And you will have quick access to our journey whenever you need it.</p>
+            <p class="message">To do that, I recommend installing Malmö Kanalrundan as an app on your device.</p>
+            <p class="message">This way, you get the full immersive experience and you will have quick access to our journey whenever you need it.</p>
             <button class="mainBtn" id="continue-part-two-button">Continue</button>
         </div>
         `;
