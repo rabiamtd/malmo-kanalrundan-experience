@@ -71,17 +71,17 @@ function createTipsrundaPage(narrativeData, siteId) {
 
     // Update the button text based on whether it's the last question
     const saveBtn = document.getElementById('saveBtn');
-    if (answeredQuestions.length === totalQuestions - 1) {
-        saveBtn.textContent = "Save and exit tipsrunda";
-    } else {
-        saveBtn.textContent = "Save and return to map";
-    }
-
-    /*if (answeredQuestions.length === 1) {
+    /*if (answeredQuestions.length === totalQuestions - 1) {
         saveBtn.textContent = "Save and exit tipsrunda";
     } else {
         saveBtn.textContent = "Save and return to map";
     }*/
+
+    if (answeredQuestions.length === 1) {
+        saveBtn.textContent = "Save and exit tipsrunda";
+    } else {
+        saveBtn.textContent = "Save and return to map";
+    }
 
     saveBtn.addEventListener('click', handleSave);
 
@@ -94,17 +94,17 @@ function createTipsrundaPage(narrativeData, siteId) {
             updateProgressBar(answeredQuestions.length, totalQuestions);
         }
 
-        if (answeredQuestions.length === totalQuestions) {
-            createSummaryPage();
-        } else {
-            createUpdatedMapPage(sites);
-        }
-
-        /*if (answeredQuestions.length === 2) {
+        /*if (answeredQuestions.length === totalQuestions) {
             createSummaryPage();
         } else {
             createUpdatedMapPage(sites);
         }*/
+
+        if (answeredQuestions.length === 2) {
+            createSummaryPage();
+        } else {
+            createUpdatedMapPage(sites);
+        }
 
         saveBtn.disabled = true;
     }

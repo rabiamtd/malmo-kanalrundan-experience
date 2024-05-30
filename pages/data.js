@@ -6,7 +6,7 @@ var sites = [
         narrativeShown: false,
         lat: 55.6060555571401,
         lng: 12.991464828051392,
-        radius: 30,
+        radius: 70,
     },
     {
         id: 2,
@@ -14,7 +14,7 @@ var sites = [
         narrativeShown: false,
         lat: 55.6049024047382,
         lng: 12.987601068527777,
-        radius: 80,
+        radius: 170,
     },
     {
         id: 3,
@@ -22,7 +22,7 @@ var sites = [
         narrativeShown: false,
         lat: 55.60556634537834,
         lng: 12.985016695512146,
-        radius: 30,
+        radius: 120,
     },
     {
         id: 4,
@@ -30,7 +30,7 @@ var sites = [
         narrativeShown: false,
         lat: 55.60390817772872,
         lng: 12.989221457671894,
-        radius: 30,
+        radius: 95,
     },
     {
         id: 5,
@@ -38,7 +38,7 @@ var sites = [
         narrativeShown: false,
         lat: 55.60318043118816,
         lng: 12.98609459736361,
-        radius: 30,
+        radius: 100,
     },
     {
         id: 6,
@@ -46,7 +46,7 @@ var sites = [
         narrativeShown: false,
         lat: 55.60073551768778,
         lng: 12.993979093660101,
-        radius: 30,
+        radius: 160,
     },
     {
         id: 7,
@@ -54,7 +54,7 @@ var sites = [
         narrativeShown: false,
         lat: 55.6049839790943,
         lng: 13.009312424340063,
-        radius: 30,
+        radius: 140,
     },
     {
         id: 8,
@@ -62,7 +62,7 @@ var sites = [
         narrativeShown: false,
         lat: 55.60794709788444,
         lng: 12.996497039692025,
-        radius: 30,
+        radius: 70,
     },
 ];
 
