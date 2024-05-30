@@ -114,6 +114,8 @@
     gap: 1rem;
 }
 
+.installDialogueContainer,
+.installPartTwoDialogueContainer,
 .introDialogueContainer {
     display: flex;
     flex-direction: column;
@@ -136,7 +138,9 @@
     color: #FFFFFF;
 }
 
+#continue-part-two-button,
 #username-submit-btn,
+#continue-button,
 #lets-go-button {
     width: 100%;
 }

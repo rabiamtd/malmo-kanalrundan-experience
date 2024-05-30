@@ -58,8 +58,8 @@ function createIntroPage() {
         <div class="introBoxContainer">
             <h1>MCSP</h1>
             <div class="introDialogueContainer">
-                <p>Hej there! Welcome to the Memory Calibration and Synchronization Protocol. I'm Astrid, your virtual guide designed by MCSP.</p>
-                <p>Oh, but before we dive in, what should I call you?</p>
+                <p class="message">Hej there! Welcome to the Memory Calibration and Synchronization Protocol. I'm Astrid, your virtual guide designed by MCSP.</p>
+                <p class="message"> Oh, but before we dive in, what should I call you?</p>
             </div>
             <div>
                 <input type="text" id="username-input" placeholder="Your name">
@@ -89,14 +89,51 @@ function createIntroPageWithUsername(username) {
         <div class="introBoxContainer">
             <h1>MCSP</h1>
             <div class="introDialogueContainer">
-                <p>Hej <span style="color:#8ecae6">${username}</span>! Malmö Kanalrundan is MCSP's way of blending history with modern tech to keep Malmö's story alive.</p>
-                <p>And with your help, we're making sure this city's rich past isn't forgotten.</p>
-                <p>So, <span style="color:#8ecae6">${username}</span>, ready to join me on this journey through time and memory?</p>
+                <p class="message">Hej <span style="color:#8ecae6">${username}</span>! Malmö Kanalrundan is MCSP's way of blending history with modern tech to keep Malmö's story alive.</p>
+                <p class="message">And with your help, we're making sure this city's rich past isn't forgotten.</p>
+                <p class="message">So, <span style="color:#8ecae6">${username}</span>, ready to join me on this journey through time and memory?</p>
             </div>
-            <button class="mainBtn" id="lets-go-button">Let's go!</button>
+            <button class="mainBtn" id="continue-button">Continue</button>
         </div>
     </div>
     `;
 
-    document.getElementById("lets-go-button").addEventListener("click", createMapPage);
+
+    document.getElementById("continue-button").addEventListener("click", createInstallPage);
+
+    let introBoxContainer = document.querySelector(".introBoxContainer");
+
+    function createInstallPage() {
+        introBoxContainer.innerHTML = `
+        <h1>MCSP</h1>
+        <div class="installDialogueContainer">
+            <p class="message">Now, before we start our journey, let's make sure you get the best experience.</p>
+            <p class="message">To do that, I recommend installing Malmö Kanalrundan as an app on your device. This way, you get the full immersive experience.</p>
+            <p class="message">And you will have quick access to our journey whenever you need it.</p>
+            <button class="mainBtn" id="continue-part-two-button">Continue</button>
+        </div>
+        `;
+
+        document.getElementById("continue-part-two-button").addEventListener("click", createInstallPagePartTwo);
+
+        function createInstallPagePartTwo() {
+            introBoxContainer.innerHTML = `
+                <h1>MCSP</h1>
+                <div class="installPartTwoDialogueContainer">
+                    <p class="message">To install the app, follow these steps:</p>
+                    <ul class="message">
+                        <li>When prompted with the installation banner, click "Install".</li>
+                        <li>If you don't see the banner, look for the install option in your browser's menu.</li>
+                    </ul>
+                    <p class="message">Once you've installed the app, tap the button below to continue our adventure!</p>
+                    <button class="mainBtn" id="lets-go-button">Let's go!</button>
+                </div>
+                `;
+
+            document.getElementById("lets-go-button").addEventListener("click", () => {
+                alert("Let's go! Open the app from your home screen to continue.");
+                createMapPage();
+            });
+        }
+    }
 }
