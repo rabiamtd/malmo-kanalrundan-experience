@@ -1,19 +1,19 @@
 {
     "name": "Malmö Kanalrundan",
     "short_name": "Kanalrundan",
-    "start_url": "/index.html",
+    "start_url": "/wdu/ht22/crossmedia/malmo-kanalrundan-experience/index.html",
     "display": "standalone",
     "background_color": "#023047",
     "theme_color": "#8ecae6",
     "description": "Experience Malmö's history through its canals with Malmö Kanalrundan.",
     "icons": [
         {
-            "src": "/wdu/ht22/crossmedia/malmo-kanalrundan-experience/images/logo.png",
+            "src": "images/logo.png",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "/wdu/ht22/crossmedia/malmo-kanalrundan-experience/images/logo2.png",
+            "src": "images/logo2.png",
             "sizes": "512x512",
             "type": "image/png"
         }
