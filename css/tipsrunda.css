@@ -1,17 +1,21 @@
-/* Tipsrunda Page Container */
 .tipsrundaPageContainer {
-    width: 95%;
-    height: 90%;
-    background-color: #023047;
-    color: white;
-    margin: auto auto;
+    width: 100%;
+    height: 100%;
+    background-color: var(--blue-dark);
+    color: var(--white);
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    text-align: center;
+}
+
+.tipsrundaContainer {
+    max-width: 340px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
 }
 
 /* Page Title */
@@ -23,6 +27,12 @@
 /* Tipsrunda Progress */
 #tipsrunda-progress-bar-container {
     margin-top: 20px;
+    height: 12px;
+    width: 100%;
+    background-color: #0C395D;
+    /* Darker blue */
+    border-radius: 10px;
+    border: 2px solid var(--yellow-light);
 }
 
 /* Tipsrunda Progress Bar */
@@ -36,51 +46,39 @@
 /* Tipsrunda Questions Container */
 #tipsrunda-questions-container {
     margin-top: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Option Button */
 .option-button {
-    background-color: #0C395D;
-    /* Darker blue */
-    color: white;
+    font-family: "Orbitron-Regular", sans-serif;
+    background-color: var(--white);
+    color: var(--black);
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 10px 20px;
     margin-bottom: 10px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
+    transition: background-color 0.3s, transform 0.3s, color 0.3s;
 }
 
 /* Option Button Hover */
 .option-button:hover {
-    background-color: #072540;
-    /* Darker blue on hover */
+    background-color: var(--yellow-light);
     transform: translateY(-3px);
     /* Lift on hover */
+    color: var(--white);
 }
 
 /* Selected Option Button */
 .option-button.selected {
-    background-color: #000000;
-    border-color: #badbcc;
+    background-color: var(--yellow-light);
+    color: var(--white);
 }
 
 /* Save Button */
 #saveBtn {
-    background-color: #FAC912;
-    /* Yellow */
-    color: #000000;
-    /* Black */
-    border: none;
-    border-radius: 5px;
-    padding: 12px 28px;
-    margin-top: 20px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-/* Save Button Hover */
-#saveBtn:hover {
-    background-color: #F7BB07;
-    /* Lighter yellow on hover */
+    width: 100%;
+    margin-top: 1rem;
 }

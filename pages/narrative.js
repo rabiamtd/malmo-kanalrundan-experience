@@ -18,7 +18,7 @@ function createNarrativePage(site, userLatLng) {
             <h1 class="narrative-headline"></h1>
             <p class="narrative-text"></p>
         </div>
-        <button class="mainBtn" id="tipsrundaQuestion-btn">Tipsrundafråga ></button>
+        <button class="mainBtn" id="tipsrundaQuestion-btn">Fråga ></button>
     </div>
     `;
 

@@ -131,9 +131,9 @@ function createMap(mapContainerId, sites, siteClickHandler) {
                     let lockIcon = document.createElement("i");
                     lockIcon.classList.add("fa-solid", "fa-lock", "status-icon");
                     modalQuestion.appendChild(lockIcon);
-                    modalQuestion.addEventListener("click", function () {
+                    /*modalQuestion.addEventListener("click", function () {
                         displayStatusBox("Frågan är fortfarande låst. Närma dig platsen för att låsa upp den.", modalQuestion);
-                    });
+                    });*/
                 }
             } else if (answeredQuestions.includes(site.id)) {
                 let checkIcon = document.createElement("i");
@@ -143,9 +143,9 @@ function createMap(mapContainerId, sites, siteClickHandler) {
                 let lockIcon = document.createElement("i");
                 lockIcon.classList.add("fa-solid", "fa-lock", "status-icon");
                 modalQuestion.appendChild(lockIcon);
-                modalQuestion.addEventListener("click", function () {
+                /*modalQuestion.addEventListener("click", function () {
                     displayStatusBox("Frågan är fortfarande låst. Svara på de tidigare frågorna för låsa upp den.", modalQuestion);
-                });
+                });*/
             }
 
             document.getElementById("questionProgressContainer").append(modalQuestion);

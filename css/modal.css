@@ -36,17 +36,23 @@
   background-color: var(--white);
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s;
+  transition: background-color 0.3s;
+  transition: transform 0.3s;
+  transition: color 0.3s;
   padding: 14px 20px;
   cursor: pointer;
-  background-color: var(--blue-light);
 }
 
 .modal-question-container:hover {
-  background-color: #f0f0f0;
+  background-color: var(--yellow-light);
   transform: translateY(-3px);
 }
+
+.modal-question-container:hover>.site-info-container>h3,
+.modal-question-container:hover>.site-info-container>p {
+  color: var(--white);
+}
+
 
 /* Modal Container */
 .modal-container.active .modal-contentBox {

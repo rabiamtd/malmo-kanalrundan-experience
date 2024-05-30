@@ -6,10 +6,10 @@ function createTipsrundaPage(narrativeData, siteId) {
     const main = document.querySelector('main');
     main.innerHTML = `
     <div class="tipsrundaPageContainer">
-        <h1>Memory Calibration and Synchronization Protocol MCSP</h1>
+        <div class="tipsrundaContainer"> 
+        <h1>Memory Calibration and Synchronization Protocol</h1>
         <p>Frågor</p>
         <p>${answeredQuestions.length}/${totalQuestions}</p>
-        <div class="tipsrundaContainer"> 
             <div id="tipsrunda-progress-bar-container">
                 <div id="tipsrunda-progress-bar"></div>
             </div>
@@ -106,13 +106,13 @@ function createTipsrundaPage(narrativeData, siteId) {
                 <div class="modal-contentBox">
                     <h1 class="title">Frågor</h1>
                     <div id="questionProgressContainer"></div>
-                    <button id="saveClose-button">Spara och stäng</button>
+                    <button class="mainBtn" id="saveClose-button">Stäng</button>
                     <div id="close-button">X</div>
                 </div>
             </div>
 
             <div id="Qbtn-container">
-                <button class="modal-button">Frågor</button>
+                <button class="mainBtn modal-button" id="mainBtn">Frågor</button>
             </div>
 
             <div id="map"></div>   
