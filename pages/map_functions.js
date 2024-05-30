@@ -42,11 +42,9 @@ function createMap(mapContainerId, sites, siteClickHandler) {
         userMarker = L.marker(userLatLng).addTo(map);
         userMarker.setLatLng(userLatLng);
 
-        // Add a popup to the user marker with maximum width
         /* userMarker.bindPopup("Din position", { maxWidth: "200px" }).openPopup();*/
 
         createQuestionsInModal(userLatLng);
-        console.log(userLatLng);
     }
 
 
@@ -87,10 +85,10 @@ function createMap(mapContainerId, sites, siteClickHandler) {
             userMarker.setLatLng(currentPosition);
 
             if (userLatLng) {
-                // Fly to the user's location with a smoother animation
+                // Fly to the user's location
                 map.flyTo(userLatLng, 16, {
-                    duration: 2, // Duration of the animation in seconds
-                    easeLinearity: 0.25 // Easing factor for the animation
+                    duration: 2,
+                    easeLinearity: 0.25
                 });
 
                 createQuestionsInModal(userLatLng);
@@ -108,7 +106,7 @@ function createMap(mapContainerId, sites, siteClickHandler) {
 
             modalQuestion.innerHTML = `
             <div class="site-info-container">
-                <h3>Fråga ${site.id}</h3>
+                <h3>Question ${site.id}</h3>
                 <p>${site.name}</p>
             </div>
             `;

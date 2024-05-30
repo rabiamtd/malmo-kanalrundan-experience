@@ -24,6 +24,13 @@
     margin: 1rem;
     background-color: var(--yellow-light);
     border-radius: 10px;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.update-location-button:hover,
+.update-location-button:hover>.crosshairs-icon {
+    transform: translateY(-3px);
+    background-color: var(--yellow-dark);
 }
 
 .crosshairs-icon {
@@ -31,11 +38,13 @@
     color: var(--black);
     padding: 0.5rem;
     transition: color 0.3s;
-    transition: box-shadow 0.3s;
+    transition: box-shadow ease 0.3s;
+    border-radius: 10px;
 }
 
 .crosshairs-icon:hover {
     box-shadow: 0 0.5px 1px rgba(12, 57, 93, 0.1);
+    color: var(--white);
 }
 
 

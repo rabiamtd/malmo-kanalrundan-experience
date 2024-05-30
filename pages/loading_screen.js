@@ -7,7 +7,7 @@ function createLoadingScreenPage() {
     <div class="loadingPageContainer">
         <div class="loaderContainer">
             <div id="loader"></div> 
-            <img class="round" id="round-img" src="images/logo.jpg" width="150" height="150">
+            <img class="round" id="round-img" src="images/logo.jpg" alt="logo image of a boat tour company" width="150" height="150">
         </div>
     </div>
     `;
@@ -30,8 +30,8 @@ function createStartPage() {
     main.innerHTML = `
 <div class="StartPageContainer">
     <div class="rectangle-logo-container"> 
-        <img class="rectangle" src="images/logo.jpg">
-        <button class="mainBtn" id="startTipsrundaBtn" type="submit">Starta båttur</button>
+        <img class="rectangle" alt="logo image of a boat tour company" src="images/logo.jpg">
+        <button class="mainBtn" id="startTipsrundaBtn" type="submit">Start boat tour</button>
     </div>
 </div> 
 `;
@@ -43,8 +43,7 @@ function createAllowLocationPermissionPage() {
     main.innerHTML = `
 <div class="locationPermissionPageContainer">
     <div id="allowPermissionBoxContainer">
-        <p>Malmö kanalrundan behöver tillgång till din plats i bakgrunden för att informera dig om intressanta saker nära dig och låsa upp de frågor du stöter på. Gå till enhetens inställningar för att aktivera platstjänster och välj 'Tillåt alltid'.
-        </p>
+        <p>Malmö Kanalrundan needs access to your location in the background in order to inform you about interesting things near you and unlock the questions you come across. Go to your device's settings to turn on location permissions and select "Allow All The Time".</p>
         <button class="mainBtn" id="location-ok-btn">OK</button>
     </div>
 </div>
@@ -57,8 +56,9 @@ function createIntroPage() {
     main.innerHTML = `
 <div class="introPageContainer">
     <div class="introBoxContainer">
+        <h1>MCSP</h1>
         <div class="introDialogueContainer">
-            <p>Hey there! Welcome to the Memory Calibration and Synchronization Protocol. I'm Astrid, your virtual guide designed by MCSP.</p>
+            <p>Hej there! Welcome to the Memory Calibration and Synchronization Protocol. I'm Astrid, your virtual guide designed by MCSP.</p>
             <p>Oh, but before we dive in, what should I call you?</p>
         </div>
         <div>
@@ -87,8 +87,9 @@ function createIntroPageWithUsername(username) {
     main.innerHTML =
         `<div class="introPageContainer">
             <div class="introBoxContainer">
+                <h1>MCSP</h1>
                 <div class="introDialogueContainer">
-                    <p>Hey there, <span style="color:#8ecae6">${username}</span>! Malmö Kanalrundan is MCSP's way of blending history with modern tech to keep Malmö's story alive.</p>
+                    <p>Hej <span style="color:#8ecae6">${username}</span>! Malmö Kanalrundan is MCSP's way of blending history with modern tech to keep Malmö's story alive.</p>
                     <p>And with your help, we're making sure this city's rich past isn't forgotten.</p>
                     <p>So, <span style="color:#8ecae6">${username}</span>, ready to join me on this journey through time and memory?</p>
                 </div>

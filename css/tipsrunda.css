@@ -1,16 +1,21 @@
-.tipsrundaPageContainer {
+.tipsrundaPageContainer,
+.summaryPageContainer {
     width: 100%;
     height: 100%;
     background-color: var(--blue-dark);
     color: var(--white);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
 
-.tipsrundaContainer {
-    max-width: 340px;
+.tipsrundaContainer,
+.summaryBoxContainer {
+    max-width: 325px;
+    width: 90;
+    height: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,39 +23,34 @@
 
 }
 
-/* Page Title */
+.introBoxContainer h1,
+.summaryBoxContainer h1,
 .tipsrundaPageContainer h1 {
     font-size: 24px;
     margin-bottom: 20px;
+    text-align: center;
 }
 
-/* Tipsrunda Progress */
 #tipsrunda-progress-bar-container {
     margin-top: 20px;
     height: 12px;
     width: 100%;
-    background-color: #0C395D;
-    /* Darker blue */
     border-radius: 10px;
     border: 2px solid var(--yellow-light);
 }
 
-/* Tipsrunda Progress Bar */
 #tipsrunda-progress-bar {
-    height: 10px;
-    background-color: #0C395D;
-    /* Darker blue */
-    border-radius: 5px;
+    height: 100%;
+    background-color: var(--yellow-light);
+    border-radius: 10px;
 }
 
-/* Tipsrunda Questions Container */
 #tipsrunda-questions-container {
     margin-top: 20px;
     display: flex;
     flex-direction: column;
 }
 
-/* Option Button */
 .option-button {
     font-family: "Orbitron-Regular", sans-serif;
     background-color: var(--white);
@@ -63,22 +63,34 @@
     transition: background-color 0.3s, transform 0.3s, color 0.3s;
 }
 
-/* Option Button Hover */
 .option-button:hover {
     background-color: var(--yellow-light);
     transform: translateY(-3px);
-    /* Lift on hover */
     color: var(--white);
 }
 
-/* Selected Option Button */
 .option-button.selected {
     background-color: var(--yellow-light);
     color: var(--white);
 }
 
-/* Save Button */
 #saveBtn {
     width: 100%;
     margin-top: 1rem;
+}
+
+.summaryBoxContainer>h1 {
+    margin-bottom: 2rem;
+}
+
+.message {
+    text-align: left;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 0px 10px 10px 10px;
+    margin-bottom: 1rem;
+}
+
+#go-to-results-btn {
+    width: 100%;
 }

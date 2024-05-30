@@ -8,7 +8,7 @@ function createTipsrundaPage(narrativeData, siteId) {
     <div class="tipsrundaPageContainer">
         <div class="tipsrundaContainer"> 
         <h1>Memory Calibration and Synchronization Protocol</h1>
-        <p>Frågor</p>
+        <p>Questions</p>
         <p>${answeredQuestions.length}/${totalQuestions}</p>
             <div id="tipsrunda-progress-bar-container">
                 <div id="tipsrunda-progress-bar"></div>
@@ -77,7 +77,12 @@ function createTipsrundaPage(narrativeData, siteId) {
         saveBtn.textContent = "Save and return to map";
     }
 
-    // Add event listener to the "Save" button
+    /*if (answeredQuestions.length === 1) {
+        saveBtn.textContent = "Save and exit tipsrunda";
+    } else {
+        saveBtn.textContent = "Save and return to map";
+    }*/
+
     saveBtn.addEventListener('click', handleSave);
 
     function handleSave() {
@@ -95,6 +100,12 @@ function createTipsrundaPage(narrativeData, siteId) {
             createUpdatedMapPage(sites);
         }
 
+        /*if (answeredQuestions.length === 2) {
+            createSummaryPage();
+        } else {
+            createUpdatedMapPage(sites);
+        }*/
+
         saveBtn.disabled = true;
     }
 
@@ -104,22 +115,22 @@ function createTipsrundaPage(narrativeData, siteId) {
         <div id="mapPageContainer">
             <div class="modal-container">
                 <div class="modal-contentBox">
-                    <h1 class="title">Frågor</h1>
+                    <h1 class="title">Questions</h1>
                     <div id="questionProgressContainer"></div>
-                    <button class="mainBtn" id="saveClose-button">Stäng</button>
+                    <button class="mainBtn" id="saveClose-button">Close</button>
                     <div id="close-button">X</div>
                 </div>
             </div>
 
             <div id="Qbtn-container">
-                <button class="mainBtn modal-button" id="mainBtn">Frågor</button>
+                <button class="mainBtn modal-button" id="mainBtn">Questions</button>
             </div>
 
             <div id="map"></div>   
         </div>
         `;
 
-        createMap("map", sites, handleSiteClick); // Pass the handler function 
+        createMap("map", sites, handleSiteClick);
     }
 
     function updateProgressBar(questionsAnswered, totalQuestions) {

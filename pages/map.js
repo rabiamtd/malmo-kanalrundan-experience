@@ -7,15 +7,15 @@ function createMapPage() {
     <div id="mapPageContainer">
         <div class="modal-container modal">
             <div class="modal-contentBox">
-                <h1 class="title">Frågor</h1>
+                <h1 class="title">Questions</h1>
                 <div id="questionProgressContainer"></div>
-                <button class="mainBtn" id="saveClose-button">Stäng</button>
+                <button class="mainBtn" id="saveClose-button">Close</button>
                 <div id="close-button">X</div>
             </div>
         </div>
 
         <div id="Qbtn-container">
-            <button class="mainBtn modal-button" id="modalBtn">Frågor</button>
+            <button class="mainBtn modal-button" id="modalBtn">Questions</button>
         </div>
 
         <div id="map"></div>   

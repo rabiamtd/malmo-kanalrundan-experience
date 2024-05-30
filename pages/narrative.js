@@ -1,6 +1,5 @@
 "use strict";
 
-/* Ensure GSAP and TextPlugin are loaded */
 if (typeof gsap === "undefined" || typeof gsap.registerPlugin === "undefined") {
     console.error("GSAP is not loaded");
 } else {
@@ -18,11 +17,10 @@ function createNarrativePage(site, userLatLng) {
             <h1 class="narrative-headline"></h1>
             <p class="narrative-text"></p>
         </div>
-        <button class="mainBtn" id="tipsrundaQuestion-btn">Fråga ></button>
+        <button class="mainBtn" id="tipsrundaQuestion-btn">Go to question ></button>
     </div>
     `;
 
-    // Call displayNarrative to get the narrative data
     const narrativeData = displayNarrative(site.id);
 
     let tipsrundaQuestionBtn = document.getElementById("tipsrundaQuestion-btn");
@@ -37,10 +35,6 @@ function createNarrativePage(site, userLatLng) {
 
         // Check if site data is found
         if (siteData) {
-            console.log(siteData);
-            console.log(siteData.narrative.narrativeHeadline);
-            console.log(siteData.narrative.siteNarrative);
-
             const narrativeHeadline = document.querySelector(".narrative-headline");
             const narrativeText = document.querySelector(".narrative-text");
 
@@ -62,7 +56,6 @@ function createNarrativePage(site, userLatLng) {
                     const delayBetweenCharacters = 0.03; // Delay between each character
                     const totalDuration = (narrative.length * (typewriterDuration + delayBetweenCharacters));
 
-                    // Use GSAP's stagger feature for a more accurate typewriter effect
                     gsap.to(narrativeText, {
                         duration: totalDuration,
                         text: {
@@ -77,7 +70,6 @@ function createNarrativePage(site, userLatLng) {
 
             return siteData.tipsrundaQuestion;
         } else {
-            // Handle case where site data is not found
             narrativeContainer.innerHTML = "<p>Narrative not found for this site.</p>";
             return null;
         }

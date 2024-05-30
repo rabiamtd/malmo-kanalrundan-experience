@@ -8,12 +8,12 @@ function launchQModal() {
 
   const modalButtonHandler = () => {
     modalContainer.classList.toggle("active");
-    toggleModalButton(); // Toggle modal button visibility
+    toggleModalButton();
   };
 
   const closeButtonHandler = () => {
     modalContainer.classList.remove("active");
-    toggleModalButton(); // Toggle modal button visibility
+    toggleModalButton();
   };
 
   // Add event listeners
@@ -21,7 +21,6 @@ function launchQModal() {
   closeButton.addEventListener("click", closeButtonHandler);
   saveCloseButton.addEventListener("click", closeButtonHandler);
 
-  // Function to toggle modal button visibility
   function toggleModalButton() {
     openButton.classList.toggle("hidden");
   }
@@ -39,7 +38,7 @@ function displayStatusBox(message, parentElement) {
   statusBox.textContent = message;
 
   const closeButton = document.createElement("button");
-  closeButton.textContent = "Stäng";
+  closeButton.textContent = "Close";
   closeButton.addEventListener("click", () => {
     statusBox.remove();
   });

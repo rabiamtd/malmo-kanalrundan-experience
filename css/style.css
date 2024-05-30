@@ -44,11 +44,9 @@ button {
 .mainBtn {
     padding: 0.75rem;
     background-color: var(--yellow-light);
-    /* Main yellow */
     width: 153px;
     height: 40px;
     color: var(--blue-dark);
-    /* Dark blue text */
     font-family: Orbitron-SemiBold;
     font-size: 0.99rem;
     transition: background-color 0.3s;
@@ -58,7 +56,6 @@ button {
 
 .mainBtn:hover {
     background-color: var(--yellow-dark);
-    /* Darker yellow on hover */
     color: var(--white);
 }
 

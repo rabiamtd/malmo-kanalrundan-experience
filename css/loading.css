@@ -18,10 +18,8 @@
     width: 150px;
     height: 150px;
     border: 12px solid var(--accent);
-    /* Light blue */
     border-radius: 50%;
     border-top: 12px solid var(--yellow-light);
-    /* Main yellow */
     -webkit-animation: spin 1.5s linear infinite;
     animation: spin 1.5s linear infinite;
 }
@@ -95,7 +93,7 @@
     background-color: var(--white);
     color: #0C395D;
     border-radius: 15px;
-    max-width: 340px;
+    max-width: 325px;
     padding: 2rem;
     gap: 1rem;
 }
@@ -112,7 +110,7 @@
 .introBoxContainer {
     display: flex;
     flex-direction: column;
-    max-width: 340px;
+    max-width: 325px;
     gap: 1rem;
 }
 
