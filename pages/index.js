@@ -6,7 +6,7 @@ const answeredQuestions = JSON.parse(localStorage.getItem('answeredQuestions')) 
 // Check localStorage for a saved username
 const savedUsername = localStorage.getItem('username');
 
-// If saved data exists, create the map page
+/*// If saved data exists, create the map page
 if (answeredQuestions.length != 0 || savedUsername) {
     createMapPage();
 } else {
@@ -17,4 +17,7 @@ if (answeredQuestions.length != 0 || savedUsername) {
 
 function saveSitesToLocalStorage() {
     localStorage.setItem('sites', JSON.stringify(sites));
-}
+}*/
+
+
+createSummaryPage();

@@ -58,7 +58,8 @@ function createIntroPage() {
         <div class="introBoxContainer">
             <h1>MCSP</h1>
             <div class="introDialogueContainer">
-                <p class="message">Hej there! Welcome to the Memory Calibration and Synchronization Protocol. I'm Astrid, your virtual guide designed by MCSP.</p>
+                <p class="message">Ahoy there adventurer! Welcome to the Memory Calibration and Synchronization Protocol.</p>
+                <p class="message">I'm Astrid, your virtual guide designed by MCSP.</p>
                 <p class="message"> Oh, but before we dive in, what should I call you?</p>
             </div>
             <div>
@@ -107,7 +108,7 @@ function createIntroPageWithUsername(username) {
         introBoxContainer.innerHTML = `
         <h1>MCSP</h1>
         <div class="installDialogueContainer">
-            <p class="message">Now, before we start our journey, let's make sure you get the best experience.</p>
+            <p class="message">Now, before we start our voyage, let's make sure you get the best experience.</p>
             <p class="message">To do that, I recommend installing Malmö Kanalrundan as an app on your device.</p>
             <p class="message">This way, you get the full immersive experience and you will have quick access to our journey whenever you need it.</p>
             <button class="mainBtn" id="continue-part-two-button">Continue</button>
@@ -123,12 +124,11 @@ function createIntroPageWithUsername(username) {
                     <p class="message">To install the app, follow these steps:</p>
                     <ul class="message">
                         <li>When prompted with the installation banner, click "Install".</li>
-                        <li>If you don't see the banner, look for the install option in your browser's menu.</li>
+                        <li>If you don't see the banner, check your browser's menu for the install option.</li>
                     </ul>
-                    <p class="message">Once you've installed the app, tap the button below to continue our adventure!</p>
+                    <p class="message">After installing, tap the button below to continue our adventure. Stay safe on your journey through Malmö's canals and keep an eye out for the moors—they hold the best sights. Enjoy your voyage!</p>
                     <button class="mainBtn" id="lets-go-button">Let's go!</button>
-                </div>
-                `;
+                </div>`;
 
             document.getElementById("lets-go-button").addEventListener("click", () => {
                 alert("Let's go! Open the app from your home screen to continue.");
