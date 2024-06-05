@@ -37,7 +37,7 @@ function createSummaryPage() {
 
         const correctPercentage = (correctAnswersCount / totalQuestions) * 100;
         summaryContainer.innerHTML += `
-            <p class="message">You answered ${correctPercentage.toFixed(2)}% of the questions correctly. Bra jobbat!</p>
+            <p class="message">You answered ${correctPercentage.toFixed(2)}% of the questions correctly.</p>
         `;
 
         const finalMessage = `

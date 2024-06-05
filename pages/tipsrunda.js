@@ -1,15 +1,20 @@
 "use strict";
 
 let userSelections = []; // Array to store the user's selections and results
+let currentQuestionIndex = 0; // Track the current question number
+
 
 function createTipsrundaPage(narrativeData, siteId) {
+    console.log(siteId);
+
+    console.log(answeredQuestions.length);
     const main = document.querySelector('main');
     main.innerHTML = `
     <div class="tipsrundaPageContainer">
         <div class="tipsrundaContainer"> 
-        <h1>Memory Calibration and Synchronization Protocol</h1>
-        <p>Questions</p>
-        <p>${answeredQuestions.length}/${totalQuestions}</p>
+            <h1>Memory Calibration and Synchronization Protocol</h1>
+            <p>Question</p>
+            <p id="question-progress">${currentQuestionIndex + 1}/${totalQuestions}</p>
             <div id="tipsrunda-progress-bar-container">
                 <div id="tipsrunda-progress-bar"></div>
             </div>
@@ -91,7 +96,10 @@ function createTipsrundaPage(narrativeData, siteId) {
         if (!answeredQuestions.includes(siteId)) {
             answeredQuestions.push(siteId);
             localStorage.setItem('answeredQuestions', JSON.stringify(answeredQuestions));
-            updateProgressBar(answeredQuestions.length, totalQuestions);
+            currentQuestionIndex++;
+            updateProgressBar(currentQuestionIndex, totalQuestions);
+            updateQuestionProgress(currentQuestionIndex, totalQuestions);
+
         }
 
         if (answeredQuestions.length === totalQuestions) {
@@ -133,11 +141,18 @@ function createTipsrundaPage(narrativeData, siteId) {
         createMap("map", sites, handleSiteClick);
     }
 
-    function updateProgressBar(questionsAnswered, totalQuestions) {
+
+    function updateProgressBar(currentQuestionIndex, totalQuestions) {
         const progressBar = document.getElementById("tipsrunda-progress-bar");
-        const progressPercentage = (questionsAnswered / totalQuestions) * 100;
+        const progressPercentage = ((currentQuestionIndex + 1) / totalQuestions) * 100;
         progressBar.style.width = `${progressPercentage}%`;
     }
 
-    updateProgressBar(answeredQuestions.length, totalQuestions);
+    function updateQuestionProgress(currentQuestionIndex, totalQuestions) {
+        const questionProgress = document.getElementById("question-progress");
+        questionProgress.textContent = `${currentQuestionIndex + 1}/${totalQuestions}`;
+    }
+
+    updateProgressBar(currentQuestionIndex, totalQuestions);
+    updateQuestionProgress(currentQuestionIndex, totalQuestions);
 }
